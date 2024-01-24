@@ -4,20 +4,33 @@ import Navbar from './Navbar'
 import Footer from './Footer.astro'
 interface Props {
 	title: string
+	ogDescription?: string
+	ogImage?: string
+	ogUrl?: string
 }
 
-const { title } = Astro.props
+const { title, ogDescription, ogImage, ogUrl } = Astro.props
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Saltos, risas y momentos inolvidables te esperan" />
+		<meta
+			name="description"
+			content={ogDescription || 'Saltos, risas y momentos inolvidables te esperan'}
+		/>
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<meta property="og:title" content={title} />
+		<meta
+			property="og:description"
+			content={ogDescription || 'Saltos, risas y momentos inolvidables te esperan'}
+		/>
+		<meta property="og:image" content={ogImage || '/seo/hh-home.png'} />
+		<meta property="og:url" content={ogUrl || 'https://happy-hop.com'} />
 	</head>
 	<body>
 		<Navbar client:only="react" />
