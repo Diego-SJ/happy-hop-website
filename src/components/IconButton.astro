@@ -1,0 +1,20 @@
+---
+type Props = {
+	src: any
+	alt?: string
+	class?: string
+	href?: string
+	target?: string
+}
+const { src, class: className, href, target } = Astro.props
+---
+
+<a
+	href={href || '#'}
+	target={target}
+	class={`inline-block w-12 h-12 md:w-14 md:h-14 p-3 aspect-square overflow-hidden font-medium transition-all bg-indigo-500 rounded-full hover:shadow-2xl hover:bg-orange-500 hover:scale-110 group ${className}`}
+>
+	<span class="fill-white transition-colors duration-200 ease-in-out">
+		<Fragment set:html={src} />
+	</span>
+</a>

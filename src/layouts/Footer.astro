@@ -1,0 +1,41 @@
+---
+import IconButton from '../components/IconButton.astro'
+import facebookSvg from '../assets/svgs/facebook.svg?raw'
+import instagramSvg from '../assets/svgs/instagram.svg?raw'
+import tiktokSvg from '../assets/svgs/tiktok.svg?raw'
+import whatsappSvg from '../assets/svgs/whatsapp.svg?raw'
+import { SOCIAL_MEDIA } from '../constants/urls'
+---
+
+<footer class="w-full flex justify-center items-center flex-col">
+	<div class="flex flex-col justify-center items-center mb-4 px-8">
+		<div class="flex items-center gap-4 mb-0">
+			<img src="/happy-hop-logo.webp" alt="Una descripción de mi imagen." class="h-12 md:h-20" />
+		</div>
+		<p class="text-center font-medium max-w-md md:text-lg hidden">
+			Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+			pariatur.
+		</p>
+	</div>
+	<div class="grid grid-cols-4 gap-7">
+		<IconButton src={facebookSvg} alt="Facebook" href={SOCIAL_MEDIA.FACEBOOK} target="_blank" />
+		<IconButton src={instagramSvg} alt="Instagram" href={SOCIAL_MEDIA.INSTAGRAM} target="_blank" />
+		<IconButton src={tiktokSvg} alt="Tiktok" href={SOCIAL_MEDIA.TIKTOK} target="_blank" />
+		<IconButton src={whatsappSvg} alt="Whatsapp" href={SOCIAL_MEDIA.WHATSAPP} target="_blank" />
+	</div>
+	<div
+		class="w-full flex flex-col my-8 border-stone-200 border-t pt-8 px-8 text-center font-medium md:text-lg lg:flex-row lg:justify-between lg:items-center"
+	>
+		<p class="m-0 mb-4 lg:mb-0">Copyright © 2024, Happy Hop. Diseñado con ❤️ por Happy Hop.</p>
+		<div class="grid grid-cols-2 place-items-center gap-8">
+			<a
+				href="/terminos-y-condiciones"
+				class="max-w-[90px] sm:max-w-none hover:text-indigo-500 hover:underline"
+				>Terminos y condiciones</a
+			>
+			<a href="/privacidad" class="max-w-[90px] sm:max-w-none hover:text-indigo-500 hover:underline"
+				>Politica de privacidad</a
+			>
+		</div>
+	</div>
+</footer>

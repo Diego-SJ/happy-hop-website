@@ -1,0 +1,23 @@
+---
+type Props = {
+	title?: string
+	class?: string
+	href?: string
+	target?: string
+}
+const { title, class: className, href = '#', target = '' } = Astro.props
+---
+
+<a
+	href={href}
+	target={target}
+	class={`relative items-center justify-start inline-block px-5 py-3 overflow-hidden font-medium transition-all bg-indigo-500 rounded-full hover:bg-white group hover:shadow-2xl hover:shadow-indigo-500 hover:-translate-y-1 ${className}`}
+>
+	<span
+		class="absolute inset-0 border-0 group-hover:border-[25px] ease-linear duration-100 transition-all border-white rounded-full"
+	></span>
+	<span
+		class="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-indigo-500"
+		>{title}</span
+	>
+</a>

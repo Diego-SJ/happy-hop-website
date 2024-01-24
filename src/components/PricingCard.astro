@@ -1,0 +1,227 @@
+---
+type Props = {
+	title?: string
+	items?: string[]
+	href?: string
+	imageUrl?: string
+	buttonText?: string
+	color?: 'sky' | 'purple' | 'green' | 'yellow' | 'pink' | 'indigo'
+}
+
+const {
+	title,
+	items,
+	href = '#',
+	color = 'sky',
+	imageUrl = '/bg-blue.webp',
+	buttonText = 'Contratar'
+} = Astro.props
+const bgImage = `url('${imageUrl}')`
+const isPurple = color === 'purple'
+const isGreen = color === 'green'
+const isYellow = color === 'yellow'
+const isPink = color === 'pink'
+const isIndigo = color === 'indigo'
+---
+
+<div
+	class="pricing-card w-full lg:max-w-[350px] min-h-[500px] rounded-2xl shadow group py-10 px-10 relative flex flex-col hover:shadow-lg"
+>
+	<div class="absolute top-0 left-0 w-full min-h-[10rem]">
+		<span
+			class:list={[
+				'is-sky',
+				{ 'is-purple': isPurple },
+				{ 'is-green': isGreen },
+				{ 'is-yellow': isYellow },
+				{ 'is-pink': isPink },
+				{ 'is-indigo': isIndigo }
+			]}
+			class={`inline-flex absolute w-8 h-8 top-6 rounded-full left-8 animate-bounce duration-300`}
+		></span>
+		<span
+			class:list={[
+				'is-sky',
+				{ 'is-purple': isPurple },
+				{ 'is-green': isGreen },
+				{ 'is-yellow': isYellow },
+				{ 'is-pink': isPink },
+				{ 'is-indigo': isIndigo }
+			]}
+			class={`inline-flex absolute w-4 h-4 top-10 rounded-full right-10 animate-bounce duration-1000`}
+		></span>
+
+		<span
+			class={`inline-flex absolute w-6 h-6 -bottom-7 rounded-full right-16 animate-bounce duration-75`}
+			class:list={[
+				'is-sky',
+				{ 'is-purple': isPurple },
+				{ 'is-green': isGreen },
+				{ 'is-yellow': isYellow },
+				{ 'is-pink': isPink },
+				{ 'is-indigo': isIndigo }
+			]}></span>
+		<span
+			class={`inline-flex absolute w-2 h-2 -bottom-0 rounded-full left-16 animate-bounce duration-1000`}
+			class:list={[
+				'is-sky',
+				{ 'is-purple': isPurple },
+				{ 'is-green': isGreen },
+				{ 'is-yellow': isYellow },
+				{ 'is-pink': isPink },
+				{ 'is-indigo': isIndigo }
+			]}></span>
+		<span
+			class={`inline-flex absolute w-4 h-4 -bottom-6 rounded-full left-10 animate-bounce duration-300`}
+			class:list={[
+				'is-sky',
+				{ 'is-purple': isPurple },
+				{ 'is-green': isGreen },
+				{ 'is-yellow': isYellow },
+				{ 'is-pink': isPink },
+				{ 'is-indigo': isIndigo }
+			]}></span>
+	</div>
+	<h2
+		class="text-4xl font-bold tracking-wider text-white md:text-4xl uppercase text-center py-6 mb-8"
+	>
+		{title}
+	</h2>
+	<!-- <h3 class={`text-center text-2xl font-bold text-${color}-400 py-10 group-hover:text-white`}>
+		¿Qué incluye?
+	</h3> -->
+	<ul
+		class="px-0 text-left text-base font-normal text-gray-800 group-hover:text-white flex flex-col gap-3 mb-10 mt-20"
+	>
+		{
+			items?.map((item) => (
+				<li class="flex gap-2 justify-start items-center">
+					<img class="star-icon w-5 h-5" src="/star.svg" alt="star" />
+					<span class="text-current">{item}</span>
+				</li>
+			))
+		}
+	</ul>
+
+	<a
+		href={href}
+		class="pricing-card-btn relative inline-block px-5 py-3 overflow-hidden font-medium transition-all rounded-full hover:bg-white group-hover:bg-white hover:shadow-2xl hover:-translate-y-1 text-white text-center mt-auto"
+		class:list={[
+			'btn-sky',
+			{ 'btn-purple': isPurple },
+			{ 'btn-green': isGreen },
+			{ 'btn-yellow': isYellow },
+			{ 'btn-pink': isPink },
+			{ 'btn-indigo': isIndigo }
+		]}
+	>
+		{buttonText}
+	</a>
+</div>
+
+<style define:vars={{ bgImage }}>
+	.pricing-card {
+		background-image: var(--bgImage);
+		background-size: 100% 250px;
+		background-repeat: no-repeat;
+		transition:
+			background-size 0.3s ease,
+			/* background-position-x 0.7s linear, */ transform 0.2s ease-in-out;
+	}
+
+	.pricing-card:hover {
+		background-size: 200% 500%;
+		background-position-x: 100%;
+		transform: scale(1.02);
+	}
+
+	.star-icon {
+		filter: grayscale(100%) contrast(100%) brightness(3);
+	}
+
+	.pricing-card:hover .star-icon {
+		filter: grayscale(100%) contrast(100%) brightness(100);
+	}
+
+	.is-sky {
+		background-color: #1c8dd8;
+	}
+	.is-purple {
+		background-color: #7618c8;
+	}
+
+	.is-green {
+		background-color: #1fc36e;
+	}
+
+	.is-yellow {
+		background-color: #e29001;
+	}
+
+	.is-pink {
+		background-color: #d30550;
+	}
+
+	.is-indigo {
+		background-color: #5257d2;
+	}
+
+	.btn-sky {
+		background-color: #27aaff;
+	}
+
+	.btn-purple {
+		background-color: #8a1ee6;
+	}
+
+	.btn-green {
+		background-color: #20d85d;
+	}
+
+	.btn-yellow {
+		background-color: #f9cb14;
+	}
+
+	.btn-pink {
+		background-color: #fd0862;
+	}
+
+	.btn-indigo {
+		background-color: #6266f1;
+	}
+
+	.pricing-card:hover .btn-sky,
+	.btn-sky:hover {
+		color: #27aaff;
+	}
+
+	.pricing-card:hover .btn-purple,
+	.btn-purple:hover {
+		color: #8a1ee6;
+	}
+
+	.pricing-card:hover .btn-green,
+	.btn-green:hover {
+		color: #28e583;
+	}
+
+	.pricing-card:hover .btn-yellow,
+	.btn-yellow:hover {
+		color: #f9cb14;
+	}
+
+	.pricing-card:hover .btn-pink,
+	.btn-pink:hover {
+		color: #fd0862;
+	}
+
+	.pricing-card:hover .btn-indigo,
+	.btn-indigo:hover {
+		color: #6266f1;
+	}
+
+	.pricing-card:hover .pricing-card-btn,
+	.pricing-card-btn:hover {
+		background-color: #fff;
+	}
+</style>

@@ -1,0 +1,36 @@
+---
+type Props = {
+	name?: string
+	body?: string
+}
+
+const { name, body } = Astro.props
+---
+
+<div class="flex w-full rounded-3xl shadow-xl py-12 px-8 testimonial-card">
+	<div class="flex flex-col">
+		<p class="font-extrabold text-indigo-500 text-5xl md:text-7xl p-0">&#10077;</p>
+		<div class="w-16 h-16 md:w-24 md:h-24 aspect-square order-1 mb-4">
+			<img
+				src={`https://source.boringavatars.com/beam/120/${name?.replaceAll(
+					' ',
+					''
+				)}?colors=22c55e,0ea5e9,ec4899,eab308`}
+				alt="Diego Salas"
+			/>
+		</div>
+		<p class="order-3">
+			{
+				body ||
+					'Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis dolor nisi at quasi accusantium cumque saepe cupiditate voluptatibus asperiores.'
+			}
+		</p>
+		<p class="font-extrabold text-indigo-950 text-xl order-2 mb-4">{name || 'Jhon Doe'}</p>
+	</div>
+</div>
+
+<style>
+	.testimonial-card {
+		box-shadow: 0 0 25px -5px rgba(0, 0, 0, 0.1);
+	}
+</style>

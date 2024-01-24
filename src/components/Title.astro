@@ -1,0 +1,19 @@
+---
+type Props = {
+	title?: string
+	caption?: string
+	captionClass?: string
+}
+const { title, caption, captionClass } = Astro.props
+---
+
+<div>
+	<h6
+		class={`text-2xl pb-4 font-extrabold leading-[1.2] relative mb-[4px] before::content-[''] before:w-[36px] before:h-[5px] before:absolute before:-bottom-0 before:left-0 before:bg-indigo-500 aos-init aos-animate text-indigo-500 ${captionClass}`}
+	>
+		{caption}
+	</h6>
+	<h2 class="text-6xl font-extrabold max-w-[14ch] leading-[1.2]">
+		{title}
+	</h2>
+</div>

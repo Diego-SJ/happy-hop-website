@@ -1,0 +1,43 @@
+---
+import Layout from '../layouts/Layout.astro'
+import PageHeader from '../components/PageHeader.astro'
+import Title from '../components/Title.astro'
+import ContactForm from '../components/ContactForm.tsx'
+import IconButton from '../components/IconButton.astro'
+import whatsappSvg from '../assets/svgs/whatsapp.svg?raw'
+import messengerSvg from '../assets/svgs/messenger.svg?raw'
+---
+
+<Layout title="Contacto">
+	<main>
+		<PageHeader
+			class="mb-20"
+			title="Contacto"
+			subtitle="¡Hagamos de tu evento algo divertido!"
+			class="bg-sky-400"
+		>
+			<img
+				src="/contact-us.png"
+				alt="contactanos"
+				class="sm:max-w-[50%] scale-125 my-0 mx-auto lg:absolute lg:-bottom-1 lg:-right-10 md:max-w-[320px]"
+			/>
+		</PageHeader>
+		<section class="grid grid-cols-1 gap-0 md:gap-[80px] md:grid-cols-2 gap-y-12 my-40">
+			<div class="flex flex-col">
+				<Title
+					title="Puedes enviarnos un mensaje vía:"
+					caption="¡La diversión no espera!"
+					captionClass="text-sky-500 before:bg-sky-500"
+				/>
+				<div class="flex gap-10 mt-10">
+					<IconButton src={whatsappSvg} alt="whatsapp" class="w-16 h-16 bg-sky-500" />
+					<IconButton src={messengerSvg} alt="messenger" class="w-16 h-16 bg-sky-500" />
+				</div>
+				<p class="mt-10 max-w-[35ch]">
+					O envianos un E-mail desde nuestro formulario, ¡Nos pondremos en contacto contigo!
+				</p>
+			</div>
+			<ContactForm client:only="react" />
+		</section>
+	</main>
+</Layout>

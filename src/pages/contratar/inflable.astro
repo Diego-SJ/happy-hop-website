@@ -1,0 +1,18 @@
+---
+import OrderForm from '../../components/OrderForm'
+import ResumeOrderForm from '../../components/ResumeOrderForm'
+import LayoutEditor from '../../layouts/LayoutEditor.astro'
+---
+
+<LayoutEditor title="Happy Hop | Editor">
+	<section class="grid lg:grid-cols-[2fr_1fr]">
+		<div class="flex flex-col w-full min-h-[100dvh] lg:max-h-[100dvh] p-8 lg:overflow-y-scroll">
+			<OrderForm client:only="react" />
+		</div>
+		<div
+			class="shadow-2xl shadow-slate-400 z-10 relative flex flex-col w-full min-h-[100dvh] lg:max-h-[100dvh] p-8 lg:overflow-y-scroll bg-[#f1f5f9]"
+		>
+			<ResumeOrderForm client:only="react" />
+		</div>
+	</section>
+</LayoutEditor>

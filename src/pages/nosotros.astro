@@ -1,0 +1,96 @@
+---
+import Layout from '../layouts/Layout.astro'
+import PageHeader from '../components/PageHeader.astro'
+import Title from '../components/Title.astro'
+import TitleShadow from '../components/TitleShadow.astro'
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+		<PageHeader
+			class="mb-20"
+			title="Sobre nosotros"
+			subtitle="Conoce Happy Hop: Donde la celebración se convierte en experiencia"
+			class="bg-pink-500"
+		>
+			<img
+				src="/about-us.png"
+				alt="sobre nosotros"
+				class="w-full mx-auto md:max-w-[20rem] lg:absolute lg:-bottom-8 lg:-right-14 lg:max-w-[24rem]"
+			/>
+		</PageHeader>
+		<section
+			class="grid grid-cols-1 gap-0 md:gap-[80px] md:grid-cols-2 justify-between items-center gap-y-12 my-32"
+		>
+			<div class="">
+				<Title
+					title="¡Somos happy hop!"
+					caption="¿Quienes omos?"
+					captionClass="text-pink-500 before:bg-pink-500"
+				/>
+				<p class="mt-6 mb-4">
+					Somos una empresa joven donde creamos experiencias memorables. Nos enorgullece ofrecer
+					soluciones únicas que hacen que cada celebración sea inolvidable.
+				</p>
+				<p class="mb-4">
+					Desde inflables vibrantes hasta invitaciones digitales personalizadas, y deliciosas
+					paletas y helados, nos dedicamos a brindar momentos especiales que perduran en la memoria
+					de nuestros clientes.
+				</p>
+			</div>
+			<img
+				src="/jumping-team.png"
+				alt="niños y niñas"
+				class="w-full scale-105 -mt-10 md:mt-[4rem]"
+			/>
+		</section>
+		<section
+			class="grid grid-cols-1 gap-0 md:grid-cols-2 md:gap-[80px] justify-between items-center gap-y-12 mt-30 mb-32"
+		>
+			<img
+				src="/why-choose.png"
+				alt="jovenes con trofeo"
+				class="w-60% order-2 -mt-12 md:mt-0 sm:order-1"
+			/>
+			<div class="order-1">
+				<Title
+					title="La diferencia está en los detalles"
+					caption="¿Por qué Happy Hop?"
+					captionClass="text-pink-500 before:bg-pink-500"
+				/>
+				<p class="mt-6 mb-4">
+					Perfeccionamos eventos inolvidables, cuidando cada detalle para garantizar la máxima
+					satisfacción.
+				</p>
+				<p class="mb-4">
+					Destacamos con una amplia variedad de productos y servicios, desde inflables vibrantes
+					hasta invitaciones digitales y deliciosos helados.
+				</p>
+				<p class="mb-4">
+					Nos diferenciamos por el compromiso con la excelencia, superando expectativas y dejando
+					una impresión duradera en cada evento.
+				</p>
+			</div>
+		</section>
+		<TitleShadow
+			bgTitle="Misión"
+			title="Nuestra Misión"
+			subtitle="Viviendo lo excepcional en cada evento"
+			bgTitleClass="text-pink-500"
+			titleClass="before:bg-pink-500"
+		/>
+		<div class="text-center max-w-[100%] lg:max-w-[70%] mx-auto mt-8 mb-40">
+			<p class="mb-4">
+				En Happy Hop, nos esforzamos por enriquecer vidas a través de experiencias extraordinarias.
+			</p>
+			<p class="mb-4">
+				Cada celebración que creamos es una oportunidad para inspirar momentos inolvidables, donde
+				la diversión, la elegancia y la alegría se fusionan en una sinfonía de felicidad.
+			</p>
+			<p>
+				Nos dedicamos a hacer que cada evento sea especial, dejando una huella positiva en la vida
+				de nuestros clientes.
+			</p>
+		</div>
+	</main>
+</Layout>

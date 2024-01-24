@@ -1,0 +1,49 @@
+---
+type Props = {
+	title?: string
+	subtitle?: string
+	bgTitle?: string
+	class?: string
+	bgTitleClass?: string
+	titleClass?: string
+}
+
+const {
+	title,
+	subtitle,
+	bgTitle,
+	class: className,
+	bgTitleClass = '',
+	titleClass = ''
+} = Astro.props
+---
+
+<div
+	class={`w-full flex flex-col items-center justify-center text-center relative my-4 overflow-visible ${className}`}
+>
+	<h2
+		class={`uppercase text-center text-6xl top-1/4 md:text-[7rem] md:top-0 lg:text-[10rem] absolute font-semibold font- text-indigo-500 heading-stroke opacity-10 -z-10 ${bgTitleClass}`}
+	>
+		{bgTitle || ''}
+	</h2>
+	<h5
+		class={`text-slate-900 relative font-extrabold text-4xl mb-8 before::content-[''] before:absolute before:-bottom-5 before:w-10 before:h-[6px] before:left-1/2 before:-translate-x-1/2 before:bg-indigo-500 ${titleClass}`}
+	>
+		{title || ''}
+	</h5>
+	<h3 class="text-slate-900 font-black text-5xl max-w-[20ch] leading-tight">
+		{subtitle || ''}
+	</h3>
+</div>
+
+<style>
+	.heading-stroke {
+		-webkit-text-stroke-width: 3px;
+		-webkit-text-stroke-color: currentColor;
+		-webkit-text-fill-color: #00000000;
+		z-index: -1;
+
+		left: 50%;
+		transform: translateX(-50%);
+	}
+</style>

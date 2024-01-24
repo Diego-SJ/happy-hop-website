@@ -1,0 +1,28 @@
+---
+type Props = {
+	class?: string
+	title?: string
+	subtitle?: string
+	imageUrl?: string
+}
+
+const { class: className, title = '', subtitle = '' } = Astro.props
+---
+
+<div
+	class={`rounded-3xl bg-indigo-500 py-16 px-12 flex flex-col md:flex-row relative ${className}`}
+>
+	<div class="flex flex-col w-full">
+		<h1
+			class="font-bold text-6xl text-white relative before::content-[''] before:w-[60px] before:h-[8px] before:absolute before:-bottom-4 before:left-0 before:bg-orange-500 leading-tight mb-8"
+		>
+			{title || 'Titulo personalizado'}
+		</h1>
+		<p
+			class="font-semibold text-white text-lg mb-8 sm:text-3xl sm:font-normal md:text-xl md:max-w-[22ch] lg:max-w-[30ch] lg:text-2xl"
+		>
+			{subtitle || 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium'}
+		</p>
+	</div>
+	<slot />
+</div>

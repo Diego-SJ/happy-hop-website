@@ -1,0 +1,30 @@
+---
+import { SAY_HI_WHATSAPP } from '../constants/urls'
+---
+
+<div
+	class="flex flex-col bg-indigo-500 rounded-2xl py-14 px-8 gap-10 overflow-visible justify-start md:flex-row md:items-center"
+>
+	<div class="flex flex-col w-full">
+		<h4 class="text-4xl text-white font-extrabold mb-5 md:-mt-3">
+			¡Hablemos de tu próxima celebración!
+		</h4>
+		<p class="text-xl text-white font-normal">
+			En Happy Hop estamos ansiosos por añadir magia a tu evento con nuestros inflables,
+			invitaciones digitales y paletas. ¡Hagámoslo realidad!
+		</p>
+	</div>
+	<a
+		href={SAY_HI_WHATSAPP}
+		target="_blank"
+		class={`relative items-center justify-start inline-block px-5 py-3 overflow-hidden font-medium transition-all bg-orange-500 rounded-full hover:bg-white group max-h-16  hover:-translate-y-1 text-center md:min-w-[20rem]`}
+	>
+		<span
+			class="absolute inset-0 border-0 group-hover:border-[25px] ease-linear duration-100 transition-all border-white rounded-full"
+		></span>
+		<span
+			class="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-orange-500"
+			>¡Contactanos!</span
+		>
+	</a>
+</div>
