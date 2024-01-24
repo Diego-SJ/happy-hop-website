@@ -1,20 +1,37 @@
 ---
 interface Props {
-	title?: string
+	title: string
+	ogDescription?: string
+	ogImage?: string
+	ogUrl?: string
 }
 
-const { title = 'Happy Hop' } = Astro.props
+const { title = 'Happy Hop', ogDescription, ogImage, ogUrl } = Astro.props
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Saltos, risas y momentos inolvidables te esperan " />
+		<meta
+			name="description"
+			content={ogDescription || 'Saltos, risas y momentos inolvidables te esperan'}
+		/>
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<meta property="og:title" content={title} />
+		<meta
+			property="og:description"
+			content={ogDescription || 'Saltos, risas y momentos inolvidables te esperan'}
+		/>
+		<meta
+			property="og:image"
+			content={ogImage ||
+				'https://firebasestorage.googleapis.com/v0/b/general-testing-70f4c.appspot.com/o/happy-hop%2Fhh-home.webp?alt=media&token=65b86b85-3d7d-4790-940b-b9396a921ffa'}
+		/>
+		<meta property="og:url" content={ogUrl || 'https://happy-hop.com'} />
 	</head>
 	<body>
 		<slot />
