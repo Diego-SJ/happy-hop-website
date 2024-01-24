@@ -29,7 +29,11 @@ const { title, ogDescription, ogImage, ogUrl } = Astro.props
 			property="og:description"
 			content={ogDescription || 'Saltos, risas y momentos inolvidables te esperan'}
 		/>
-		<meta property="og:image" content={ogImage || '/seo/hh-home.png'} />
+		<meta
+			property="og:image"
+			content={ogImage ||
+				'https://firebasestorage.googleapis.com/v0/b/general-testing-70f4c.appspot.com/o/happy-hop%2Fhh-home.png?alt=media&token=33a2ddaa-4250-4cf3-acb8-feff27ba3fcd'}
+		/>
 		<meta property="og:url" content={ogUrl || 'https://happy-hop.com'} />
 	</head>
 	<body>
