@@ -3,11 +3,9 @@ import Layout from '../layouts/Layout.astro'
 import TitleShadow from '../components/TitleShadow.astro'
 import PageHeader from '../components/PageHeader.astro'
 import PricingCard from '../components/PricingCard.astro'
-
-import pricingPng from '../assets/images/pricing.png'
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Happy Hop | Paquetes">
 	<main>
 		<PageHeader
 			class="mb-20"
@@ -15,7 +13,7 @@ import pricingPng from '../assets/images/pricing.png'
 			subtitle="Perfectos para fiestas infantiles, reuniones familiares o cualquier celebración al aire libre. "
 		>
 			<img
-				src={pricingPng.src}
+				src="pricing.webp"
 				alt="planes"
 				class="-scale-x-100 -skew-x-12 sm:max-w-[50%] my-0 mx-auto md:max-w-[20rem] lg:absolute lg:-bottom-4 lg:-right-6 lg:max-w-[22rem]"
 			/>
