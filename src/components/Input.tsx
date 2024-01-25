@@ -35,7 +35,7 @@ const Input = ({
 				value={value}
 				checked={checked}
 				placeholder={placeholder}
-				className={`font-normal w-full outline-none  py-3 px-3 text-gray-500 bg-transparent border border-gray-200 placeholder:font-normal placeholder:text-slate-300 rounded-2xl cursor-text focus:border-indigo-600 hover:bg-gray-50 ${
+				className={`h-[3rem] min-h-[3rem] min-w-full font-normal w-full outline-none  px-3 text-gray-500 bg-transparent border border-gray-200 placeholder:font-normal placeholder:text-slate-300 rounded-2xl cursor-text focus:border-indigo-600 hover:bg-gray-50 ${
 					!!value ? 'border-indigo-600' : 'border-gray-200'
 				} invalid:text-red-500 `}
 				onChange={({ target }) => handleChange(target)}

@@ -239,7 +239,7 @@ const OrderForm = () => {
 						<Input
 							name="birthdayNumber"
 							value={formData.birthdayNumber}
-							type="number"
+							type="tel"
 							placeholder="Cumpleaños #"
 							onChange={handleChange}
 						/>

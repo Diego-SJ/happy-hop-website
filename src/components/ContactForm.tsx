@@ -111,7 +111,7 @@ const ContactForm = () => {
 					className="outline-none border-[3px] bg-transparent border-gray-300 py-2 px-4 dark:bg-transparent focus:border-sky-500 rounded-full focus:ring-0"
 					id="email"
 					name="email"
-					type="text"
+					type="email"
 					value={form.email}
 					onChange={onChange}
 				/>
@@ -125,7 +125,7 @@ const ContactForm = () => {
 					className="outline-none border-[3px] bg-transparent border-gray-300 py-2 px-4 dark:bg-transparent focus:border-sky-500 rounded-full focus:ring-0"
 					id="phone"
 					name="phone"
-					type="text"
+					type="tel"
 					value={form.phone}
 					onChange={onChange}
 				/>

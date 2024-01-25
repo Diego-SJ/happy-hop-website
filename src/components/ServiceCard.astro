@@ -4,13 +4,15 @@ type Props = {
 	subtitle?: string
 	title?: string
 	body?: string
+	class?: string
 }
 
-const { image, subtitle, title, body } = Astro.props
+const { image, subtitle, title, body, class: className = '' } = Astro.props
 ---
 
 <div
-	class="flex flex-col w-full bg-indigo-500 p-10 rounded-3xl gap-y-6 md:gap-x-8 group hover:scale-105 transition-all hover:bg-indigo-600"
+	class={`flex flex-col w-full bg-indigo-500 p-10 rounded-3xl gap-y-6 md:gap-x-8 group hover:scale-105 transition-all hover:bg-indigo-600 ${className}`}
+	data-taos-offset="10"
 >
 	<div
 		class="rounded-full bg-white w-24 h-24 aspect-square group-hover:scale-125 group-hover:rotate-12 transition-all delay-100"

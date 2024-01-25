@@ -91,13 +91,13 @@ const OrderForm = () => {
 			<div className="w-full flex gap-4">
 				<button
 					onClick={goBack}
-					className="w-full font-bold border-slate-700 border-2 rounded-full py-2 px-8 hover:bg-slate-700 hover:text-white "
+					className="h-[3.2rem] w-full font-bold border-slate-700 border-2 rounded-full py-2 px-8 hover:bg-slate-700 hover:text-white "
 				>
 					Cancelar
 				</button>
 				<button
 					onClick={onClick}
-					className="w-full font-bold border-slate-700 border-2 rounded-full py-2 px-8 bg-slate-700 text-white hover:bg-slate-800 hover:text-white "
+					className="h-[3.2rem] w-full font-bold border-slate-700 border-2 rounded-full py-2 px-8 bg-slate-700 text-white hover:bg-slate-800 hover:text-white "
 				>
 					Enviar
 				</button>

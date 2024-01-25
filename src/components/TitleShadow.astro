@@ -22,16 +22,21 @@ const {
 	class={`w-full flex flex-col items-center justify-center text-center relative my-4 overflow-visible ${className}`}
 >
 	<h2
-		class={`uppercase text-center text-6xl top-1/4 md:text-[7rem] md:top-0 lg:text-[10rem] absolute font-semibold font- text-indigo-500 heading-stroke opacity-10 -z-10 ${bgTitleClass}`}
+		class={`delay-[0ms] duration-[300ms] taos:translate-y-[200px] taos:opacity-0 uppercase text-center text-6xl top-1/4 md:text-[7rem] md:top-0 lg:text-[10rem] absolute font-semibold font- text-indigo-500 heading-stroke opacity-10 -z-10 ${bgTitleClass}`}
+		data-taos-offset="0"
 	>
 		{bgTitle || ''}
 	</h2>
 	<h5
-		class={`text-slate-900 relative font-extrabold text-4xl mb-8 before::content-[''] before:absolute before:-bottom-5 before:w-10 before:h-[6px] before:left-1/2 before:-translate-x-1/2 before:bg-indigo-500 ${titleClass}`}
+		class={`delay-[200ms] duration-[300ms] taos:translate-y-[200px] taos:opacity-0 text-slate-900 relative font-extrabold text-4xl mb-8 before::content-[''] before:absolute before:-bottom-5 before:w-10 before:h-[6px] before:left-1/2 before:-translate-x-1/2 before:bg-indigo-500 ${titleClass}`}
+		data-taos-offset="0"
 	>
 		{title || ''}
 	</h5>
-	<h3 class="text-slate-900 font-black text-5xl max-w-[20ch] leading-tight">
+	<h3
+		class="delay-[400ms] duration-[300ms] taos:translate-y-[200px] taos:opacity-0 text-slate-900 font-black text-5xl max-w-[20ch] leading-tight"
+		data-taos-offset="10"
+	>
 		{subtitle || ''}
 	</h3>
 </div>

@@ -14,12 +14,14 @@ const { class: className, title = '', subtitle = '' } = Astro.props
 >
 	<div class="flex flex-col w-full">
 		<h1
-			class="font-bold text-6xl text-white relative before::content-[''] before:w-[60px] before:h-[8px] before:absolute before:-bottom-4 before:left-0 before:bg-orange-500 leading-tight mb-8"
+			class="delay-[0ms] duration-[600ms] taos:translate-y-[200px] taos:opacity-0 font-bold text-6xl text-white relative before::content-[''] before:w-[60px] before:h-[8px] before:absolute before:-bottom-4 before:left-0 before:bg-orange-500 leading-tight mb-8"
+			data-taos-offset="100"
 		>
 			{title || 'Titulo personalizado'}
 		</h1>
 		<p
-			class="font-semibold text-white text-lg mb-8 sm:text-3xl sm:font-normal md:text-xl md:max-w-[22ch] lg:max-w-[30ch] lg:text-2xl"
+			class="delay-[200ms] duration-[600ms] taos:translate-y-[200px] taos:opacity-0 font-semibold text-white text-lg mb-8 sm:text-3xl sm:font-normal md:text-xl md:max-w-[22ch] lg:max-w-[30ch] lg:text-2xl"
+			data-taos-offset="100"
 		>
 			{subtitle || 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium'}
 		</p>

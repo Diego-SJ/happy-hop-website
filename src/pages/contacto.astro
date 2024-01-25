@@ -24,7 +24,8 @@ import messengerSvg from '../assets/svgs/messenger.svg?raw'
 			<img
 				src="/contact-us.webp"
 				alt="contactanos"
-				class="sm:max-w-[50%] scale-125 my-0 mx-auto lg:absolute lg:-bottom-1 lg:-right-10 md:max-w-[320px]"
+				class="delay-[400ms] duration-[600ms] taos:translate-y-[200px] taos:opacity-0 sm:max-w-[50%] scale-125 my-0 mx-auto lg:absolute lg:-bottom-1 lg:-right-10 md:max-w-[320px]"
+				data-taos-offset="-50"
 			/>
 		</PageHeader>
 		<section class="grid grid-cols-1 gap-0 md:gap-[80px] md:grid-cols-2 gap-y-12 my-40">
@@ -33,16 +34,29 @@ import messengerSvg from '../assets/svgs/messenger.svg?raw'
 					title="Puedes enviarnos un mensaje vía:"
 					caption="¡La diversión no espera!"
 					captionClass="text-sky-500 before:bg-sky-500"
+					offsetCaption="-100"
+					offsetTitle="-100"
 				/>
-				<div class="flex gap-10 mt-10">
+				<div
+					class="delay-[200ms] duration-[600ms] taos:translate-y-[200px] taos:opacity-0 flex gap-10 mt-10"
+					data-taos-offset="-200"
+				>
 					<IconButton src={whatsappSvg} alt="whatsapp" class="w-16 h-16 bg-sky-500" />
 					<IconButton src={messengerSvg} alt="messenger" class="w-16 h-16 bg-sky-500" />
 				</div>
-				<p class="mt-10 max-w-[35ch]">
+				<p
+					class="delay-400ms] duration-[600ms] taos:translate-y-[200px] taos:opacity-0 mt-10 max-w-[35ch]"
+					data-taos-offset="2"
+				>
 					O envianos un E-mail desde nuestro formulario, ¡Nos pondremos en contacto contigo!
 				</p>
 			</div>
-			<ContactForm client:only="react" />
+			<div
+				class="delay-400ms] duration-[600ms] taos:translate-y-[200px] taos:opacity-0"
+				data-taos-offset="-200"
+			>
+				<ContactForm client:only="react" />
+			</div>
 		</section>
 	</main>
 </Layout>

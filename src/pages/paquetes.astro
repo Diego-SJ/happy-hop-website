@@ -21,13 +21,15 @@ import { SOCIAL_MEDIA } from '../constants/urls'
 			<img
 				src="/pricing-table.webp"
 				alt="planes"
-				class="-scale-x-100 -skew-x-12 sm:max-w-[50%] my-0 mx-auto md:max-w-[20rem] lg:absolute lg:-bottom-4 lg:-right-6 lg:max-w-[22rem]"
+				class="delay-[400ms] duration-[600ms] taos:translate-y-[200px] taos:opacity-0 -scale-x-100 -skew-x-12 sm:max-w-[50%] my-0 mx-auto md:max-w-[20rem] lg:absolute lg:-bottom-4 lg:-right-6 lg:max-w-[22rem]"
+				data-taos-offset="0"
 			/>
 		</PageHeader>
 
 		<TitleShadow bgTitle="planes" title="Planes" subtitle="¡Elige uno o arma el tuyo!" />
 		<p
-			class="block text-2xl antialiased font-semibold text-center max-w-[50ch] mx-auto my-8 leading-snug"
+			class="delay-[400ms] duration-[600ms] taos:translate-y-[200px] taos:opacity-0 block text-2xl antialiased font-semibold text-center max-w-[50ch] mx-auto my-8 leading-snug"
+			data-taos-offset="0"
 		>
 			¡Haz de tu celebración un momento inolvidable con nuestros planes exclusivos! Sea cual sea tu
 			estilo, tenemos la opción ideal para ti.
@@ -41,6 +43,8 @@ import { SOCIAL_MEDIA } from '../constants/urls'
 				imageUrl="/blue-wave.webp"
 				href="/contratar/inflable?plan=basico"
 				items={['Inflable', 'Invitación digital']}
+				class="delay-[000ms] duration-[400ms] taos:translate-y-[200px] taos:opacity-0"
+				data-taos-offset="0"
 			/>
 			<PricingCard
 				title="SUPER HOP"
@@ -49,14 +53,18 @@ import { SOCIAL_MEDIA } from '../constants/urls'
 				imageUrl="/purple-wave.webp"
 				href="/contratar/inflable?plan=super-hop"
 				items={['Inflable', 'Invitación digital', 'Paletas de hielo o helado']}
+				class="delay-[300ms] duration-[400ms] taos:translate-y-[200px] taos:opacity-0"
+				data-taos-offset="0"
 			/>
 			<PricingCard
-				title="CUSTOM"
+				title="A TU MEDIDA"
 				color="green"
 				buttonText="Contratar"
 				imageUrl="/green-wave.webp"
 				href="/contratar/inflable?plan=custom"
 				items={['Inflable', 'Invitación digital', 'Paletas de hielo o helado']}
+				class="delay-[600ms] duration-[400ms] taos:translate-y-[200px] taos:opacity-0"
+				data-taos-offset="0"
 			/>
 		</section>
 		<TitleShadow
@@ -65,7 +73,8 @@ import { SOCIAL_MEDIA } from '../constants/urls'
 			subtitle="¿Solo necesitas una invitación?"
 		/>
 		<p
-			class="block text-2xl antialiased font-semibold text-center max-w-[50ch] mx-auto my-8 leading-snug"
+			class="delay-[400ms] duration-[600ms] taos:translate-y-[200px] taos:opacity-0 block text-2xl antialiased font-semibold text-center max-w-[50ch] mx-auto my-8 leading-snug"
+			data-taos-offset="0"
 		>
 			Creemos que cada gran evento comienza con una invitación perfecta. Por eso, ofrecemos planes
 			de invitaciones digitales personalizadas que se adaptan a cada ocasión y estilo.
@@ -79,6 +88,8 @@ import { SOCIAL_MEDIA } from '../constants/urls'
 				buttonText="Contratar"
 				imageUrl="/pink-wave.webp"
 				href={SOCIAL_MEDIA.WHATSAPP}
+				class="delay-[0ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+				data-taos-offset="0"
 				items={[
 					'Botón de ubicación',
 					'Confirmación de asistencia',
@@ -94,6 +105,8 @@ import { SOCIAL_MEDIA } from '../constants/urls'
 				color="indigo"
 				imageUrl="/indigo-wave.webp"
 				href={SOCIAL_MEDIA.WHATSAPP}
+				class="delay-[0ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+				data-taos-offset="0"
 				items={[
 					'Todo lo del plan básico',
 					'Galeria de fotos',
@@ -103,13 +116,14 @@ import { SOCIAL_MEDIA } from '../constants/urls'
 					'Excel de lista de invitados'
 				]}
 			/>
-
 			<PricingCard
 				title="DELUXE"
 				color="yellow"
 				buttonText="Contratar"
 				imageUrl="/yellow-wave.webp"
 				href={SOCIAL_MEDIA.WHATSAPP}
+				class="delay-[0ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+				data-taos-offset="0"
 				items={[
 					'Todo lo del plan premium',
 					'Música de fondo',

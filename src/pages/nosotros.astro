@@ -21,7 +21,8 @@ import TitleShadow from '../components/TitleShadow.astro'
 			<img
 				src="/about-us.webp"
 				alt="sobre nosotros"
-				class="w-full mx-auto md:max-w-[20rem] lg:absolute lg:-bottom-8 lg:-right-14 lg:max-w-[24rem]"
+				class="delay-[400ms] duration-[600ms] taos:translate-y-[200px] taos:opacity-0 w-full mx-auto md:max-w-[20rem] lg:absolute lg:-bottom-8 lg:-right-14 lg:max-w-[24rem]"
+				data-taos-offset="-100"
 			/>
 		</PageHeader>
 		<section
@@ -32,12 +33,20 @@ import TitleShadow from '../components/TitleShadow.astro'
 					title="¡Somos happy hop!"
 					caption="¿Quienes somos?"
 					captionClass="text-pink-500 before:bg-pink-500"
+					offsetTitle="-100"
+					offsetCaption="-100"
 				/>
-				<p class="mt-6 mb-4">
+				<p
+					class="delay-[400ms] duration-[600ms] taos:translate-y-[200px] taos:opacity-0 mt-6 mb-4"
+					data-taos-offset="-50"
+				>
 					Somos una empresa joven donde creamos experiencias memorables. Nos enorgullece ofrecer
 					soluciones únicas que hacen que cada celebración sea inolvidable.
 				</p>
-				<p class="mb-4">
+				<p
+					class="delay-[800ms] duration-[600ms] taos:translate-y-[200px] taos:opacity-0 mb-4"
+					data-taos-offset="-50"
+				>
 					Desde inflables vibrantes hasta invitaciones digitales personalizadas, y deliciosas
 					paletas y helados, nos dedicamos a brindar momentos especiales que perduran en la memoria
 					de nuestros clientes.
@@ -46,7 +55,8 @@ import TitleShadow from '../components/TitleShadow.astro'
 			<img
 				src="/jumping-team.webp"
 				alt="niños y niñas"
-				class="w-full scale-105 -mt-10 md:mt-[4rem]"
+				class="delay-[1000ms] duration-[600ms] taos:translate-y-[200px] taos:opacity-0 w-full scale-105 -mt-10 md:mt-[4rem]"
+				data-taos-offset="-100"
 			/>
 		</section>
 		<section
@@ -55,23 +65,35 @@ import TitleShadow from '../components/TitleShadow.astro'
 			<img
 				src="/why-choose.webp"
 				alt="jovenes con trofeo"
-				class="w-60% order-2 -mt-12 md:mt-0 sm:order-1"
+				class="delay-[400ms] duration-[600ms] taos:translate-y-[200px] taos:opacity-0 w-60% order-2 -mt-12 md:mt-0 sm:order-1"
+				data-taos-offset="-50"
 			/>
 			<div class="order-1">
 				<Title
 					title="La diferencia está en los detalles"
 					caption="¿Por qué Happy Hop?"
 					captionClass="text-pink-500 before:bg-pink-500"
+					offsetCaption="-100"
+					offsetTitle="-100"
 				/>
-				<p class="mt-6 mb-4">
+				<p
+					class="delay-[200ms] duration-[600ms] taos:translate-y-[200px] taos:opacity-0 mb-4 mt-6"
+					data-taos-offset="-150"
+				>
 					Perfeccionamos eventos inolvidables, cuidando cada detalle para garantizar la máxima
 					satisfacción.
 				</p>
-				<p class="mb-4">
+				<p
+					class="delay-[400ms] duration-[600ms] taos:translate-y-[200px] taos:opacity-0 mb-4"
+					data-taos-offset="-150"
+				>
 					Destacamos con una amplia variedad de productos y servicios, desde inflables vibrantes
 					hasta invitaciones digitales y deliciosos helados.
 				</p>
-				<p class="mb-4">
+				<p
+					class="delay-[600ms] duration-[600ms] taos:translate-y-[200px] taos:opacity-0 mb-4"
+					data-taos-offset="-150"
+				>
 					Nos diferenciamos por el compromiso con la excelencia, superando expectativas y dejando
 					una impresión duradera en cada evento.
 				</p>
@@ -85,14 +107,23 @@ import TitleShadow from '../components/TitleShadow.astro'
 			titleClass="before:bg-pink-500"
 		/>
 		<div class="text-center max-w-[100%] lg:max-w-[70%] mx-auto mt-8 mb-40">
-			<p class="mb-4">
+			<p
+				class="delay-[0ms] duration-[600ms] taos:translate-y-[200px] taos:opacity-0 mb-4"
+				data-taos-offset="-90"
+			>
 				En Happy Hop, nos esforzamos por enriquecer vidas a través de experiencias extraordinarias.
 			</p>
-			<p class="mb-4">
+			<p
+				class="delay-[200ms] duration-[600ms] taos:translate-y-[200px] taos:opacity-0 mb-4"
+				data-taos-offset="-90"
+			>
 				Cada celebración que creamos es una oportunidad para inspirar momentos inolvidables, donde
 				la diversión, la elegancia y la alegría se fusionan en una sinfonía de felicidad.
 			</p>
-			<p>
+			<p
+				class="delay-[400ms] duration-[600ms] taos:translate-y-[200px] taos:opacity-0"
+				data-taos-offset="-90"
+			>
 				Nos dedicamos a hacer que cada evento sea especial, dejando una huella positiva en la vida
 				de nuestros clientes.
 			</p>

@@ -2,12 +2,16 @@
 type Props = {
 	name?: string
 	body?: string
+	class?: string
 }
 
-const { name, body } = Astro.props
+const { name, body, class: className = '' } = Astro.props
 ---
 
-<div class="flex w-full rounded-3xl shadow-xl py-12 px-8 testimonial-card">
+<div
+	class={`flex w-full rounded-3xl shadow-xl py-12 px-8 testimonial-card ${className}`}
+	data-taos-offset="-10"
+>
 	<div class="flex flex-col">
 		<p class="font-extrabold text-indigo-500 text-5xl md:text-7xl p-0">&#10077;</p>
 		<div class="w-16 h-16 md:w-24 md:h-24 aspect-square order-1 mb-4">

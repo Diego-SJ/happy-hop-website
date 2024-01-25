@@ -22,7 +22,13 @@ import { SAY_HI_WHATSAPP } from '../constants/urls'
 					title="Saltos, risas y momentos inolvidables te esperan"
 					caption="¡Descubre la emoción de nuestros inflables!"
 				/>
-				<Button target="_blank" href={SAY_HI_WHATSAPP} title="Contactar" class="mt-8" />
+				<Button
+					target="_blank"
+					href={SAY_HI_WHATSAPP}
+					title="Contactar"
+					class="mt-8 delay-[600ms] duration-[400ms] taos:translate-y-[200px] taos:opacity-0"
+					data-taos-offset="300"
+				/>
 			</div>
 			<PhotoGallery />
 		</section>
@@ -32,22 +38,26 @@ import { SAY_HI_WHATSAPP } from '../constants/urls'
 			<FeatureCard
 				title="Inflables Fantásticos"
 				description="Salta hacia la diversión con nuestros inflables coloridos y seguros, perfectos para cada fiesta infantil"
-				className="bg-green-500"
+				className="bg-green-500 delay-[0ms] duration-[400ms] taos:translate-y-[200px] taos:opacity-0"
+				data-taos-offset="10"
 			/>
 			<FeatureCard
 				title="Invitaciones Innovadoras"
 				description="Cautiva desde el inicio con invitaciones digitales creativas y personalizadas que anuncian tu evento de manera única"
-				className="lg:self-end bg-sky-500"
+				className="lg:self-end bg-sky-500 delay-[600ms] duration-[400ms] taos:translate-y-[200px] taos:opacity-0"
+				data-taos-offset="10"
 			/>
 			<FeatureCard
 				title="Snacks Super Deliciosos"
 				description="Refresca tu fiesta con paletas de hielo y helado delicioso, con una variedad de sabores irresistibles"
-				className="bg-pink-500"
+				className="bg-pink-500 delay-[0ms] duration-[900ms] taos:translate-y-[200px] taos:opacity-0"
+				data-taos-offset="10"
 			/>
 			<FeatureCard
 				title="Eventos Memorables"
 				description="Todo en uno: inflables emocionantes, invitaciones digitales y paletas de hielo para celebraciones que todos recordarán"
-				className="lg:self-end bg-yellow-500"
+				className="lg:self-end bg-yellow-500 delay-[300ms] duration-[600ms] taos:translate-y-[200px] taos:opacity-0"
+				data-taos-offset="10"
 			/>
 		</section>
 		<TitleShadow bgTitle="servicios" title="servicios" subtitle="TODO EN UNO" />
@@ -57,18 +67,21 @@ import { SAY_HI_WHATSAPP } from '../constants/urls'
 				subtitle="Diversión sin Límites"
 				title="Inflables"
 				body="Nuestros inflables no son solo grandes y coloridos, son un mundo de alegría para los pequeños. Seguros, limpios y listos para cualquier tema de fiesta, garantizan horas de diversión sin parar."
+				class="delay-[0ms] duration-[400ms] taos:translate-y-[200px] taos:opacity-0"
 			/>
 			<ServiceCard
 				image={inviteSvg}
 				subtitle="Tu Evento Comienza Aquí"
 				title="Invitaciones Digitales"
 				body="Causa una primera impresión asombrosa con nuestras invitaciones digitales personalizadas. Diseños únicos que capturan la esencia de tu evento, fáciles de compartir y siempre memorables."
+				class="delay-[200ms] duration-[400ms] taos:translate-y-[200px] taos:opacity-0"
 			/>
 			<ServiceCard
 				image={popsiclesSvg}
 				subtitle="Sabores que Encantan"
 				title="Paletas y Helados"
 				body="¿Qué sería una fiesta sin un toque dulce? Nuestras paletas de hielo y helados artesanales son la delicia perfecta para cualquier edad. Con una amplia gama de sabores, cada uno es una fiesta en sí mismo."
+				class="delay-[400ms] duration-[400ms] taos:translate-y-[200px] taos:opacity-0"
 			/>
 		</section>
 		<TitleShadow
@@ -78,19 +91,25 @@ import { SAY_HI_WHATSAPP } from '../constants/urls'
 		/>
 		<section class="grid lg:grid-cols-3 gap-6 my-20">
 			<TestimonialCard
+				class="delay-[000ms] duration-[400ms] taos:translate-y-[200px] taos:opacity-0"
 				name="Abigail Gachuz Alviter"
 				body={`"Nunca olvidaré la cara de felicidad de mis hijos jugando en los inflables. Todo fue perfecto, desde las invitaciones digitales hasta las deliciosas paletas de hielo. ¡Un servicio excepcional!"`}
 			/>
 			<TestimonialCard
+				class="delay-[200ms] duration-[400ms] taos:translate-y-[200px] taos:opacity-0"
 				name="Carolina Hernandez Mota"
 				body={`"Como profesional de eventos, he trabajado con muchos proveedores, pero Happy Hop realmente destaca. Su atención al detalle en las invitaciones digitales y la calidad de sus inflables hacen cada evento único y especial."`}
 			/>
 			<TestimonialCard
+				class="delay-[400ms] duration-[400ms] taos:translate-y-[200px] taos:opacity-0"
 				name="Emily Juárez Zenil"
 				body={`"Elegí Happy Hop para una fiesta sorpresa y fue increíble. Los adultos disfrutamos tanto como los niños con los inflables, y las paletas de hielo fueron el toque perfecto para una tarde de verano. ¡Totalmente recomendado!"`}
 			/>
 		</section>
-		<section class="my-36">
+		<section
+			class="delay-[400ms] duration-[400ms] taos:translate-y-[200px] taos:opacity-0 my-36"
+			data-taos-offset="-50"
+		>
 			<NewsLatter />
 		</section>
 	</main>
