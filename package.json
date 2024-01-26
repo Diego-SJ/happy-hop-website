@@ -27,6 +27,7 @@
 		"typescript": "^5.3.3"
 	},
 	"devDependencies": {
+		"postcss-nesting": "^12.0.2",
 		"tailwindcss-animated": "^1.0.1"
 	}
 }
