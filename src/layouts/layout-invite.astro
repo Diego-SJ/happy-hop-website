@@ -5,6 +5,7 @@ type Props = {
 	ogImage?: string
 	ogUrl?: string
 	bgColor?: string
+	bgImage?: string
 }
 
 const {
@@ -12,7 +13,8 @@ const {
 	ogDescription,
 	ogImage,
 	ogUrl,
-	bgColor = '#f1f8ff'
+	bgColor = '#f1f8ff',
+	bgImage = null
 } = Astro.props
 ---
 
@@ -41,12 +43,10 @@ const {
 		<meta property="og:url" content={ogUrl || 'https://happy-hop.com'} />
 	</head>
 	<body>
-		<main>
-			<slot />
-		</main>
+		<slot />
 	</body>
 </html>
-<style is:global define:vars={{ bgColor }}>
+<style is:global define:vars={{ bgColor, bgImage }}>
 	:root {
 		--accent: 136, 58, 234;
 		--accent-light: 224, 204, 250;
@@ -58,26 +58,24 @@ const {
 			white 60%
 		);
 	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: var(--bgColor);
+
+	@font-face {
+		font-family: 'MinecraftTen';
+		src: url('/fonts/MinecraftTen.ttf') format('truetype');
+		font-weight: normal;
+		font-style: normal;
+		font-display: swap;
 	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
+
+	html {
+		font-family: 'MinecraftTen', system-ui, sans-serif;
+		background-color: var(--bgColor);
 	}
 
 	main {
 		margin: 0 auto;
-		width: 500px;
-		max-width: 100%;
+		max-width: 500px;
+		min-width: 100dvw;
 		font-size: 20px;
 		line-height: 1.6;
 		overflow-x: hidden;
@@ -86,6 +84,24 @@ const {
 		min-height: 100dvh;
 		max-height: 100dvh;
 		box-shadow: 0 0 60px 30px rgba(0, 0, 0, 0.2);
+		position: relative;
+	}
+
+	body::before {
+		content: '';
+		min-width: 100dvw;
+		max-width: 100dvw;
+		min-height: 100dvh;
+		max-height: 100dvh;
+		background-image: url('/invites/minecraft/hero.webp');
+		filter: blur(1rem);
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		transform: scale(1.2);
+		position: absolute;
+		left: 0;
+		top: 0;
 	}
 
 	/* Chrome, Safari, Edge, Opera */
