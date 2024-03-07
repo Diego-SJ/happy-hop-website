@@ -71,13 +71,13 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({
 
 			<button
 				onClick={saveCalendarEvent}
-				className="minecraft-btn mx-auto w-[20rem] text-center text-white truncate px-1 border-2 border-b-4 hover:text-yellow-200 mb-[1rem]"
+				className="minecraft-btn mx-auto xs:w-[100%] xs:text-[1.5rem]  ms:text-[1.8rem] sm:w-20rem sm:text-[2rem] text-center text-white truncate px-1 border-2 border-b-4 hover:text-yellow-200 mb-[1rem]"
 			>
 				Agregar a calendario
 			</button>
 
 			<a href="https://maps.google.com/?q=20.177752,-99.244377" target="_blank">
-				<button className="minecraft-btn mx-auto w-[20rem] text-center text-white truncate px-1 border-2 border-b-4 hover:text-yellow-200 mb-[1rem]">
+				<button className="minecraft-btn mx-auto xs:w-[100%] xs:text-[1.5rem]  ms:text-[1.8rem] sm:w-20rem sm:text-[2rem] text-center text-white truncate px-1 border-2 border-b-4 hover:text-yellow-200 mb-[1rem]">
 					Ver ubicación
 				</button>
 			</a>
@@ -86,7 +86,7 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({
 				href="https://api.whatsapp.com/send?phone=++527737365002&text=%C2%A1Confirmo%20mi%20asistencia%20a%20la%20fiesta!%20🎉🥳"
 				target="_blank"
 			>
-				<button className="minecraft-btn mx-auto w-[20rem] text-center text-white truncate px-1 border-2 border-b-4 hover:text-yellow-200 mb-[1rem]">
+				<button className="minecraft-btn mx-auto xs:w-[100%] xs:text-[1.5rem]  ms:text-[1.8rem] sm:w-20rem sm:text-[2rem] text-center text-white truncate px-1 border-2 border-b-4 hover:text-yellow-200 mb-[1rem]">
 					Confirmar asistencia
 				</button>
 			</a>
@@ -97,10 +97,10 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({
 const Square = ({ title = '', value = '' }) => {
 	return (
 		<div className="text-center">
-			<h5 className="date-day-number text-[3.5rem] font-[Minecraft] m-0 leading-[0.7] pt-[1rem] text-[#beff3d] [text-shadow:_0_0.3rem_0_#2b2c2a,_0_0_2rem_rgb(0_0_0_/_80%)]">
+			<h5 className="date-day-number xs:text-[2rem] ms:text-[3.5rem] font-[Minecraft] m-0 leading-[0.7] pt-[1rem] text-[#beff3d] [text-shadow:_0_0.3rem_0_#2b2c2a,_0_0_2rem_rgb(0_0_0_/_80%)]">
 				{value}
 			</h5>
-			<p className="date-text text-white text-[2rem] font-[VT323] [text-shadow:_0.2rem_0.2rem_0_#393938,_0_0_2rem_rgb(0_0_0_/_80%)]">
+			<p className="date-text text-white xs:text-[1.5rem] ms:text-[2rem] font-[VT323] [text-shadow:_0.2rem_0.2rem_0_#393938,_0_0_2rem_rgb(0_0_0_/_80%)]">
 				{title}
 			</p>
 		</div>

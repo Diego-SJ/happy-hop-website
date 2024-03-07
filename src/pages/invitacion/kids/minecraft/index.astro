@@ -10,14 +10,18 @@ import CountdownTimer from './CountdownTimer'
 			<img class="title-top" src="/invites/minecraft/minecraft.webp" alt="minecraft" />
 			<KidName />
 
-			<p class="invite-age animate-wiggle animate-infinite">9</p>
+			<p class="invite-age animate-wiggle animate-infinite xs:text-[13rem] ms:text-[20rem]">9</p>
 
 			<img
 				class="title animate-wiggle animate-infinite"
 				src="/invites/minecraft/minecraft.webp"
 				alt="minecraft"
 			/>
-			<img class="pico" src="/invites/minecraft/pico.webp" alt="minecraft" />
+			<img
+				class="pico xs:w-[2rem] ms:w-[3rem] sm:w-[4rem]"
+				src="/invites/minecraft/pico.webp"
+				alt="minecraft"
+			/>
 			<!-- <h4
 				class="join-party text-5xl font-[Minecraft] text-center text-white animate-wiggle animate-infinite"
 			>
@@ -25,20 +29,30 @@ import CountdownTimer from './CountdownTimer'
 			</h4> -->
 		</div>
 
-		<div class="invite-info text-center">
+		<div class="invite-info text-center flex flex-col justify-center">
 			<p
 				class="text-white text-[2rem] font-[VT323] [text-shadow:_0.2rem_0.2rem_0_#393938,_0_0_2rem_rgb(0_0_0_/_80%)] leading-8 mt-10 mb-10"
 			>
 				¡Unete a mi fiesta de cumpleaños!
 			</p>
-			<div class="date-container text-center">
-				<p class="date-text text-white text-[3rem] font-[VT323]">DOMINGO</p>
+			<div
+				class="date-container text-center flex justify-center items-center flex-col xs:w-[14rem] xs:h-[14rem] ms:w-[16rem] ms:h-[16rem] xs:before:w-[14rem] xs:before:h-[14rem] ms:before:w-[16rem] ms:before:h-[16rem]"
+			>
+				<p
+					class="date-text text-white xs:text-[2.2rem] ms:text-[2.8rem] sm:text-[4rem] font-[VT323]"
+				>
+					DOMINGO
+				</p>
 				<h5
 					class="date-day-number text-[8rem] font-[Minecraft] m-0 leading-[0.7] pt-[1rem] [text-shadow:_0_0.8rem_0_#2b2c2a,_0_0_2rem_rgb(0_0_0_/_80%)]"
 				>
 					10
 				</h5>
-				<p class="date-text text-white text-[3rem] font-[VT323]">MARZO</p>
+				<p
+					class="date-text text-white xs:text-[2.2rem] ms:text-[2.5rem] sm:text-[3rem] font-[VT323]"
+				>
+					MARZO
+				</p>
 			</div>
 			<p
 				class="text-white text-[2rem] font-[VT323] [text-shadow:_0.2rem_0.2rem_0_#393938,_0_0_2rem_rgb(0_0_0_/_80%)] leading-8 mt-5 mb-0"
@@ -88,7 +102,6 @@ import CountdownTimer from './CountdownTimer'
 	}
 
 	.invite-hero img.pico {
-		width: 4rem;
 		position: absolute;
 		bottom: 5rem;
 		animation: bounce 1s ease-in-out infinite;
@@ -96,7 +109,6 @@ import CountdownTimer from './CountdownTimer'
 
 	.invite-age {
 		font-family: 'Minecraft';
-		font-size: 22rem;
 		color: #f9f6ec;
 		text-shadow:
 			0 1rem #7ab267,
@@ -122,8 +134,6 @@ import CountdownTimer from './CountdownTimer'
 	}
 
 	.date-container {
-		width: 16rem;
-		height: 16rem;
 		margin: 2rem auto;
 		border: 3px dashed white;
 		position: relative;
@@ -131,8 +141,6 @@ import CountdownTimer from './CountdownTimer'
 
 	.date-container::before {
 		content: '';
-		width: 16rem;
-		height: 16rem;
 		position: absolute;
 		top: 0.1rem;
 		left: 0.1rem;
@@ -173,7 +181,6 @@ import CountdownTimer from './CountdownTimer'
 		border-color: #aaa #565656 #565656 #aaa;
 		text-shadow: 0.2rem 0.2rem #4c4c4c;
 		outline: 0.2rem solid #000;
-		font-size: 2rem;
 	}
 
 	.minecraft-btn:hover {
