@@ -1,25 +1,16 @@
 ---
-type Props = {
-	title?: string
+interface Props {
+	title: string
 	ogDescription?: string
 	ogImage?: string
 	ogUrl?: string
-	bgColor?: string
-	bgImage?: string
 }
 
-const {
-	title = 'Invitación digital',
-	ogDescription,
-	ogImage,
-	ogUrl,
-	bgColor = '#f1f8ff',
-	bgImage = null
-} = Astro.props
+const { title, ogDescription, ogImage, ogUrl } = Astro.props
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
 		<meta
@@ -41,12 +32,17 @@ const {
 				'https://firebasestorage.googleapis.com/v0/b/general-testing-70f4c.appspot.com/o/happy-hop%2Fhh-home.webp?alt=media&token=65b86b85-3d7d-4790-940b-b9396a921ffa'}
 		/>
 		<meta property="og:url" content={ogUrl || 'https://happy-hop.com'} />
+		<meta
+			name="viewport"
+			content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi"
+		/>
 	</head>
 	<body>
 		<slot />
+		<img class="background-invite" src="/invites/minecraft/peakpx2.webp" alt="mine" />
 	</body>
 </html>
-<style is:global define:vars={{ bgColor, bgImage }}>
+<style is:global>
 	:root {
 		--accent: 136, 58, 234;
 		--accent-light: 224, 204, 250;
@@ -58,50 +54,37 @@ const {
 			white 60%
 		);
 	}
-
-	@font-face {
-		font-family: 'MinecraftTen';
-		src: url('/fonts/MinecraftTen.ttf') format('truetype');
-		font-weight: normal;
-		font-style: normal;
-		font-display: swap;
-	}
-
 	html {
-		font-family: 'MinecraftTen', system-ui, sans-serif;
-		background-color: var(--bgColor);
+		font-family: system-ui, sans-serif;
+		background: #ffffff;
+		background-size: 224px;
+	}
+	code {
+		font-family:
+			Menlo,
+			Monaco,
+			Lucida Console,
+			Liberation Mono,
+			DejaVu Sans Mono,
+			Bitstream Vera Sans Mono,
+			Courier New,
+			monospace;
 	}
 
-	main {
-		margin: 0 auto;
-		max-width: 500px;
-		min-width: 100dvw;
-		font-size: 20px;
-		line-height: 1.6;
-		overflow-x: hidden;
-		overflow-y: scroll;
-		background-color: gray;
-		min-height: 100dvh;
-		max-height: 100dvh;
-		box-shadow: 0 0 60px 30px rgba(0, 0, 0, 0.2);
+	body {
 		position: relative;
 	}
 
-	body::before {
-		content: '';
-		min-width: 100dvw;
-		max-width: 100dvw;
-		min-height: 100dvh;
-		max-height: 100dvh;
-		background-image: url('/invites/minecraft/hero.webp');
-		filter: blur(1rem);
-		background-size: cover;
-		background-repeat: no-repeat;
-		background-position: center;
-		transform: scale(1.2);
-		position: absolute;
-		left: 0;
+	.background-invite {
+		width: 100dvw; /* Corregido */
+		height: 100vh;
+		z-index: -2;
+		position: fixed;
 		top: 0;
+		left: 0;
+		object-fit: cover;
+		filter: blur(1rem);
+		transform: scale(1.2);
 	}
 
 	/* Chrome, Safari, Edge, Opera */
