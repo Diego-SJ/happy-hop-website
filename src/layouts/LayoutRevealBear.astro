@@ -35,6 +35,19 @@ const { title, ogDescription, ogUrl } = Astro.props
 	</head>
 	<body>
 		<slot />
+
+		<audio id="my_audio" autoplay loop>
+			<source src="/audio/sunshine.mp3" type="audio/mpeg" />
+		</audio>
+
+		<script>
+			window.onload = function () {
+				const audioElement = document.getElementById('my_audio') as HTMLAudioElement
+				if (audioElement) {
+					audioElement.play()
+				}
+			}
+		</script>
 	</body>
 </html>
 <style is:global>

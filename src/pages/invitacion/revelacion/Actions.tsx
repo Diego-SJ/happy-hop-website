@@ -8,7 +8,7 @@ const locationUrl = 'https://maps.app.goo.gl/eFSbAd9XwyaopRW9A'
 const phonNumer = '7712137372'
 const date = {
 	startDate: '2024-03-30',
-	startTime: '16:00',
+	startTime: '17:00',
 	endTime: '20:00'
 }
 
