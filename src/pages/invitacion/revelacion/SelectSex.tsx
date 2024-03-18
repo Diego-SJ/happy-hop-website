@@ -5,6 +5,7 @@ const SelectSex = () => {
 	const { loading, fetchInvite, sendVote, percentage, voteSent } =
 		useRevelationInvite('MICHEL_CARRILLO')
 	const firstRender = useRef(false)
+	const titleRef = useRef<any>(null)
 
 	useEffect(() => {
 		if (!firstRender.current) {
@@ -15,11 +16,15 @@ const SelectSex = () => {
 
 	const handleSelect = async (sex: 'boy' | 'girl' | null) => {
 		await sendVote(sex)
+		titleRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
 	}
 
 	return (
-		<div className="my-8 w-full">
-			<h4 className="main-font text-center w-full leading-[0.8] xs:text-[3rem] ms:text-[5rem]">
+		<div className="mt-8 mb-8 w-full">
+			<h4
+				ref={titleRef}
+				className="main-font text-center w-full leading-[0.8] xs:text-[3rem] ms:text-[5rem]"
+			>
 				¿Será
 			</h4>
 			<h5 className="main-font  leading-[0.9] xs:text-[3rem] ms:text-[5rem] mb-4 -mt-2 w-full text-center">
@@ -30,9 +35,9 @@ const SelectSex = () => {
 
 			{!voteSent && (
 				<>
-					{/* <p className="font-[Handlee] xs:text-[1.2rem] ms:text-[1.3rem] text-zinc-500 w-full text-center leading-7 mb-4">
-						Selecciona el sexo del bebé
-					</p> */}
+					<p className="font-[Handlee] xs:text-[1.2rem] ms:text-[1.3rem] text-zinc-500 w-full text-center leading-7 mb-4">
+						¡Dinos que piensas!
+					</p>
 					<div className="flex gap-4 px-[5%] w-full">
 						<button
 							disabled={loading}
@@ -53,11 +58,16 @@ const SelectSex = () => {
 			)}
 			{!!voteSent && (
 				<>
-					<p className="font-[Handlee] xs:text-[1.2rem] ms:text-[1.3rem] text-zinc-500 w-full text-center leading-7 mb-4">
-						¡Elegiste {voteSent === 'boy' ? 'Niño' : 'Niña'}!
+					<p className="font-[Handlee] xs:text-[1.2rem] ms:text-[1.3rem] text-zinc-500 w-full text-center leading-7 mb-6 max-w-[90%] mx-auto">
+						<span className="mb-2 block animate-jump animate-infinite animate-duration-[2s]">
+							¡Elegiste {voteSent === 'boy' ? 'Niño' : 'Niña'}!
+						</span>
+						{voteSent === 'boy'
+							? 'Te invitamos a que vistas una prenda azul y traer pañales de cualquier etapa.'
+							: 'Te invitamos a vestir una prenda rosa y traer toallitas húmedas.'}
 					</p>
 					<div className="flex flex-col px-4">
-						<div className="w-full flex justify-between mb-2">
+						<div className="w-full flex justify-between mb-2 animate-wiggle animate-infinite">
 							<img
 								className="xs:w-[3rem] ms:w-[4rem] xs:h-[2.6rem] ms:h-[3.5rem] mt-1"
 								src="/invites/revelacion/osa.webp"
@@ -84,6 +94,9 @@ const SelectSex = () => {
 							</p>
 						</div>
 					</div>
+					<p className="font-[Handlee] xs:text-[1.5rem] ms:text-[1.8rem] text-zinc-500 w-full text-center leading-7 mb-4 max-w-[90%] mx-auto mt-8">
+						¡Te esperamos!
+					</p>
 				</>
 			)}
 		</div>

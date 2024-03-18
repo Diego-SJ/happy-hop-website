@@ -5,7 +5,7 @@ interface CountdownTimerProps {
 }
 
 const CountdownTimer: React.FC<CountdownTimerProps> = ({
-	targetDate = new Date(2024, 2, 30, 15, 30)
+	targetDate = new Date(2024, 2, 30, 16, 0)
 }) => {
 	const calculateTimeLeft = () => {
 		const difference = targetDate.getTime() - new Date().getTime()
@@ -39,8 +39,10 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({
 
 	return (
 		<>
-			<p className="font-[Handlee] xs:text-[1.3rem] ms:text-[1.5rem] text-zinc-500">Faltan</p>
-			<div className="text-center w-full">
+			<p className="font-[Handlee] xs:text-[1.3rem] ms:text-[1.5rem] text-zinc-500 animate-fade-up animate-once animate-duration-700 animate-delay-[600ms]">
+				Faltan
+			</p>
+			<div className="text-center w-full animate-fade-up animate-once animate-duration-700 animate-delay-[800ms]">
 				<div className="grid grid-cols-4 mb-[2rem] w-full">
 					<Square title="días" value={formatTime(timeLeft.days)} />
 					<Square title="hrs" value={formatTime(timeLeft.hours)} />
