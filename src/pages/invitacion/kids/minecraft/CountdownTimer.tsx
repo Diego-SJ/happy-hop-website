@@ -63,10 +63,10 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({
 				FALTAN
 			</h4>
 			<div className="grid grid-cols-4 mb-[2rem]">
-				<Square title="días" value={formatTime(timeLeft.days)} />
-				<Square title="hrs" value={formatTime(timeLeft.hours)} />
-				<Square title="min" value={formatTime(timeLeft.minutes)} />
-				<Square title="seg" value={formatTime(timeLeft.seconds)} />
+				<Square title="días" value={formatTime(timeLeft.days || 0)} />
+				<Square title="hrs" value={formatTime(timeLeft.hours || 0)} />
+				<Square title="min" value={formatTime(timeLeft.minutes || 0)} />
+				<Square title="seg" value={formatTime(timeLeft.seconds || 0)} />
 			</div>
 
 			<button
@@ -98,7 +98,7 @@ const Square = ({ title = '', value = '' }) => {
 	return (
 		<div className="text-center">
 			<h5 className="date-day-number xs:text-[2rem] ms:text-[3.5rem] font-[Minecraft] m-0 leading-[0.7] pt-[1rem] text-[#beff3d] [text-shadow:_0_0.3rem_0_#2b2c2a,_0_0_2rem_rgb(0_0_0_/_80%)]">
-				{value}
+				{value || 0}
 			</h5>
 			<p className="date-text text-white xs:text-[1.5rem] ms:text-[2rem] font-[VT323] [text-shadow:_0.2rem_0.2rem_0_#393938,_0_0_2rem_rgb(0_0_0_/_80%)]">
 				{title}

@@ -1,0 +1,107 @@
+---
+interface Props {
+	title: string
+	ogDescription?: string
+	ogImage?: string
+	ogUrl?: string
+}
+
+const { title, ogDescription, ogUrl } = Astro.props
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={ogDescription || '¡Unete a mi fiesta de cumpleaños!'} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<meta property="og:title" content={title} />
+		<meta
+			property="og:description"
+			content={ogDescription || '¡Unete a mi fiesta de cumpleaños!'}
+		/>
+		<meta
+			property="og:image"
+			content="https://firebasestorage.googleapis.com/v0/b/test1-d2593.appspot.com/o/assets%2Fwebp%2Fmich-revelacion.webp?alt=media&token=903aa575-5519-4d3f-9434-879633ea8c74"
+		/>
+		<meta property="og:url" content={ogUrl || 'https://happy-hop.com'} />
+		<meta
+			name="viewport"
+			content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi"
+		/>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+<style is:global>
+	:root {
+		--accent: 136, 58, 234;
+		--accent-light: 224, 204, 250;
+		--accent-dark: 49, 10, 101;
+		--accent-gradient: linear-gradient(
+			45deg,
+			rgb(var(--accent)),
+			rgb(var(--accent-light)) 30%,
+			white 60%
+		);
+	}
+	html {
+		font-family: system-ui, sans-serif;
+		background: #fdf4e6;
+		background-size: 224px;
+	}
+	code {
+		font-family:
+			Menlo,
+			Monaco,
+			Lucida Console,
+			Liberation Mono,
+			DejaVu Sans Mono,
+			Bitstream Vera Sans Mono,
+			Courier New,
+			monospace;
+	}
+
+	body {
+		position: relative;
+	}
+
+	.background-invite {
+		width: 100dvw; /* Corregido */
+		height: 100vh;
+		z-index: -2;
+		position: fixed;
+		top: 0;
+		left: 0;
+		object-fit: cover;
+		filter: blur(1rem);
+		transform: scale(1.2);
+	}
+
+	/* Chrome, Safari, Edge, Opera */
+	input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+
+	/* Firefox */
+	input[type='number'] {
+		-moz-appearance: textfield;
+	}
+
+	/* Hide scrollbar for Chrome, Safari and Opera */
+	*::-webkit-scrollbar {
+		display: none;
+	}
+
+	/* Hide scrollbar for IE, Edge and Firefox */
+	* {
+		-ms-overflow-style: none; /* IE and Edge */
+		scrollbar-width: none; /* Firefox */
+	}
+</style>
