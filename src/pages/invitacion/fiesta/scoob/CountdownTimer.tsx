@@ -60,7 +60,9 @@ const Square = ({ title = '', value = '' }) => {
 			<h5 className="scoob-font shadow-scoob date-day-number xs:text-[2.2rem] ms:text-[2.5rem]  m-0 leading-[0.7] pt-[1rem]">
 				{value}
 			</h5>
-			<p className="scoob-font shadow-scoob date-text xs:text-[1.1rem] ms:text-[1.3rem]">{title}</p>
+			<p className="scoob-font shadow-scoob-sm date-text xs:text-[1.1rem] ms:text-[1.3rem]">
+				{title}
+			</p>
 		</div>
 	)
 }
