@@ -66,7 +66,9 @@ const ConfirmAsistance = () => {
 			>
 				{voteSent?.attendance
 					? '	Agradecemos tu presencia en este día tan especial para nosotros.'
-					: 'Lamentamos que no puedas acompañarnos en este día tan especial.'}
+					: voteSent?.name
+					? 'Lamentamos que no puedas acompañarnos en este día tan especial.'
+					: ''}
 			</p>
 			{!voteSent && (
 				<form className="mt-8 mb-8 w-full ms:px-10">

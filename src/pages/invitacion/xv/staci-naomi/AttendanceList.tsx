@@ -88,14 +88,14 @@ const AttendanceList = () => {
 											{guest?.name || '- - -'}
 										</p>
 										<p
-											className={`text-sm text-gray-500 truncate font-[Lora] italic ${
+											className={`text-sm truncate font-[Lora] italic ${
 												guest.attendance ? `text-[#387b38]` : 'text-[#803e3e]'
 											}`}
 										>
 											{guest.attendance ? `Asistirá` : 'No asistirá'}
 										</p>
 									</div>
-									<div className="inline-flex items-center text-xs ms:text-sm text-gray-500 truncate font-[Lora] italic text-center">
+									<div className="inline-flex items-center text-xs ms:text-xs text-gray-500 truncate font-[Lora] italic text-center">
 										Acompañantes <br />
 										{guest?.guests}
 									</div>
