@@ -28,13 +28,17 @@ const AttendanceList = () => {
 
 	const onDownload = () => {
 		const data: DataItem[] =
-			currentInvite?.guests?.map((guest) => {
-				return {
-					Nombre: guest.name,
-					Asistencia: guest.attendance ? 'Asistirá' : 'No asistirá',
-					Acompañantes: guest.guests
-				} as DataItem
-			}) || []
+			currentInvite?.guests
+				?.filter((i) => {
+					return !!i?.name
+				})
+				?.map((guest) => {
+					return {
+						Nombre: guest.name,
+						Asistencia: guest.attendance ? 'Asistirá' : 'No asistirá',
+						Acompañantes: guest.guests
+					} as DataItem
+				}) || []
 		downloadCSV(data, 'asistencia.csv')
 	}
 
