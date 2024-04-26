@@ -27,6 +27,13 @@ export type RevelationInvite = {
 	votes?: { boy: number; girl: number }
 }
 
+export type ConfirmAsistance = {
+	id?: string
+	user?: string
+	event_date?: string
+	guests?: { name?: string; attendance: boolean; guests?: number }[]
+}
+
 export async function getUsers({ refetch = false }): Promise<User[]> {
 	let usersList = []
 
@@ -53,6 +60,41 @@ export async function saveUser(user: User): Promise<boolean> {
 		return false
 	}
 }
+
+// XV INVITES
+
+export async function getXVInvites(): Promise<ConfirmAsistance[]> {
+	let usersList = []
+
+	const invites = collection(db, 'invites/xv/v1')
+	const usersSnapshot = await getDocs(invites)
+	usersList = usersSnapshot.docs.map((doc) => {
+		return { ...doc.data(), id: doc.id }
+	})
+
+	localStorage.setItem('xv', JSON.stringify(usersList))
+
+	return usersList
+}
+
+export const sendXVAttendance = async (
+	name: string,
+	id: string,
+	updatedData: Partial<ConfirmAsistance>,
+	myData: { name: string; attendance: boolean; guests: number }
+): Promise<boolean> => {
+	try {
+		const inviteRef = doc(db, 'invites/xv/v1', id)
+		await updateDoc(inviteRef, updatedData)
+		localStorage.setItem(`vote_${name}`, JSON.stringify(myData))
+		return true
+	} catch (error) {
+		console.log({ error })
+		return false
+	}
+}
+
+// REVELETION INVITES
 
 export async function getRevelationInvites(): Promise<RevelationInvite[]> {
 	let usersList = []

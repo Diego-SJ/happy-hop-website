@@ -25,16 +25,34 @@ const { title, ogDescription, ogUrl } = Astro.props
 		/>
 		<meta
 			property="og:image"
-			content="https://firebasestorage.googleapis.com/v0/b/test1-d2593.appspot.com/o/assets%2Fwebp%2Falexandrogael.webp?alt=media&token=c4ab69e5-829d-42eb-b11e-c2c04c98d67d"
+			content="https://firebasestorage.googleapis.com/v0/b/test1-d2593.appspot.com/o/assets%2Fwebp%2Fmich-revelacion.webp?alt=media&token=903aa575-5519-4d3f-9434-879633ea8c74"
 		/>
 		<meta property="og:url" content={ogUrl || 'https://happy-hop.com'} />
 		<meta
 			name="viewport"
 			content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi"
 		/>
+		<link
+			href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"
+			rel="stylesheet"
+		/>
 	</head>
 	<body>
 		<slot />
+
+		<!-- <audio id="my_audio" autoplay loop>
+			<source src="/audio/sunshine.mp3" type="audio/mpeg" />
+		</audio> -->
+
+		<script>
+			window.onload = function () {
+				const audioElement = document.getElementById('my_audio') as HTMLAudioElement
+				if (audioElement) {
+					audioElement.play()
+				}
+			}
+		</script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 	</body>
 </html>
 <style is:global>
@@ -51,11 +69,35 @@ const { title, ogDescription, ogUrl } = Astro.props
 	}
 	html {
 		font-family: system-ui, sans-serif;
-		background: #ffffff;
+		background: #e8ddde;
 		background-size: 224px;
 	}
+	code {
+		font-family:
+			Menlo,
+			Monaco,
+			Lucida Console,
+			Liberation Mono,
+			DejaVu Sans Mono,
+			Bitstream Vera Sans Mono,
+			Courier New,
+			monospace;
+	}
+
 	body {
 		position: relative;
+	}
+
+	.background-invite {
+		width: 100dvw; /* Corregido */
+		height: 100vh;
+		z-index: -2;
+		position: fixed;
+		top: 0;
+		left: 0;
+		object-fit: cover;
+		filter: blur(1rem);
+		transform: scale(1.2);
 	}
 
 	/* Chrome, Safari, Edge, Opera */

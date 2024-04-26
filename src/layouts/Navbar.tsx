@@ -20,7 +20,7 @@ const Navbar = () => {
 			<nav className="flex items-center justify-between p-0 lg:px-24" aria-label="Global">
 				<div className="flex lg:flex-1">
 					<a href="/" className="flex items-center gap-4 py-3">
-						<img src="/happy-hop-logo.webp" alt="Happy hop" className="h-10" />
+						<img src="/landing/happy-hop-logo.webp" alt="Happy hop" className="h-10" />
 					</a>
 				</div>
 				<div className="flex lg:hidden">

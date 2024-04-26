@@ -5,7 +5,7 @@ interface CountdownTimerProps {
 }
 
 const CountdownTimer: React.FC<CountdownTimerProps> = ({
-	targetDate = new Date(2024, 2, 30, 17, 0)
+	targetDate = new Date(2024, 6, 22, 17, 0)
 }) => {
 	const calculateTimeLeft = () => {
 		const difference = targetDate.getTime() - new Date().getTime()
@@ -38,29 +38,38 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({
 	}
 
 	return (
-		<>
-			<p className="font-[Handlee] xs:text-[1.3rem] ms:text-[1.5rem] text-zinc-500 animate-fade-up animate-once animate-duration-700 animate-delay-[600ms]">
-				Faltan
+		<div className="py-10 flex flex-col justify-center items-center bg-white">
+			<img src="/invites/xv/staci/decoration1.svg" alt="decoration" className="w-[50%] mb-8" />
+			<p
+				className="mb-4 font-[Handlee] xs:text-[1.3rem] ms:text-[1.5rem] text-zinc-500 animate-fade-up animate-once animate-duration-700 animate-delay-[600ms] text-center"
+				style={{ fontFamily: 'Cinzel Decorative' }}
+			>
+				Cuenta regresiva
 			</p>
 			<div className="text-center w-full animate-fade-up animate-once animate-duration-700 animate-delay-[800ms]">
-				<div className="grid grid-cols-4 mb-[2rem] w-full">
+				<div className="grid grid-cols-4 w-full">
 					<Square title="días" value={formatTime(timeLeft.days)} />
 					<Square title="hrs" value={formatTime(timeLeft.hours)} />
 					<Square title="min" value={formatTime(timeLeft.minutes)} />
 					<Square title="seg" value={formatTime(timeLeft.seconds)} />
 				</div>
 			</div>
-		</>
+			<img
+				src="/invites/xv/staci/decoration1.svg"
+				alt="decoration"
+				className="w-[50%] mt-8 rotate-180"
+			/>
+		</div>
 	)
 }
 
 const Square = ({ title = '', value = '' }) => {
 	return (
 		<div className="text-center ">
-			<h5 className="font-[Handlee] date-day-number xs:text-[2.2rem] ms:text-[2.5rem]  m-0 leading-[0.7] pt-[1rem] text-[#e7be90] ">
-				{value}
+			<h5 className="font-[Lora] date-day-number xs:text-[2.2rem] ms:text-[2.5rem]  m-0 leading-[0.7] pt-[1rem] text-[#ce9f95] ">
+				{value || '00'}
 			</h5>
-			<p className="font-[Handlee] date-text text-zinc-500 xs:text-[1.2rem] ms:text-[1.4rem]">
+			<p className="font-[Handlee] date-text text-zinc-500 xs:text-[1rem] ms:text-[1.2rem] mt-4">
 				{title}
 			</p>
 		</div>

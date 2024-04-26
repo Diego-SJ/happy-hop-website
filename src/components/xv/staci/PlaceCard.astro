@@ -1,0 +1,65 @@
+---
+type Props = {
+	imageUrl: string
+	title: string
+	subtitle: string
+	address: string
+	date: string
+	time: string
+	link: string
+}
+const { imageUrl, title, subtitle, address, date, time, link } = Astro.props
+---
+
+<div
+	class="py-10 xs:max-w-[90%] ms:max-w-[80%] shadow-2xl rounded-lg relative shadow-[#ba999b] border border-[#ba999b1a]"
+>
+	<picture
+		class="overflow-hidden absolute rounded-full top-[-6rem] left-1/2 transform -translate-x-1/2 min-w-[10rem] min-h-[10rem] shadow-xl border-4 border-white aspect-square"
+	>
+		<img
+			src={imageUrl}
+			alt="Parroquia de nuestra señora del carmen"
+			class="object-cover h-full w-full bg-center"
+		/>
+	</picture>
+	<h2
+		class="xs:text-3xl ms:text-5xl text-center text-[#ce9f95] xs:mt-[3rem] ms:mt-[5rem] xs:mb-2 ms:mb-4"
+		style="font-family: 'MonteCarlo';"
+	>
+		{title}
+	</h2>
+	<div class="xs:px-8 ms:px-[4rem]">
+		<h3
+			class="text-[#5d5e5b] text-center italic mb-4 xs:text-base ms:text-xl"
+			style="font-family: 'Lora';"
+		>
+			{subtitle}
+		</h3>
+		<p
+			class="text-[#5d5e5b] text-center italic mb-4 xs:text-sm ms:text-base"
+			style="font-family: 'Lora';"
+		>
+			{address}
+		</p>
+		<p
+			class="text-[#6f706f] text-center xs:text-sm ms:text-xl italic mb-0"
+			style="font-family: 'Lora';"
+		>
+			{date}
+		</p>
+		<p class="text-[#5d5e5b] text-center xs:text-sm ms:text-xl italic" style="font-family: 'Lora';">
+			{time}
+		</p>
+	</div>
+	<div class="flex justify-center mt-4 xs:px-8 ms:px-16">
+		<a
+			href={link}
+			target="_blank"
+			class="bg-[#ce9f95] text-white py-2 px-4 xs:text-sm ms:text-base w-full text-center hover:shadow-lg transition duration-300 ease-in-out"
+			style="font-family: 'Lora';"
+		>
+			Ver en Google Maps
+		</a>
+	</div>
+</div>

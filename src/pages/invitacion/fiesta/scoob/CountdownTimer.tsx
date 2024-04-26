@@ -34,7 +34,7 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({
 	})
 
 	const formatTime = (time: number) => {
-		return time < 10 ? `0${time}` : `${time}`
+		return time < 10 ? `0${time}` : `${time || 0}`
 	}
 
 	return (
