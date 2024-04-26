@@ -8,8 +8,8 @@ import Gallery from '../../../../components/xv/staci/GalleryXV.astro'
 ---
 
 <LayoutInvite title="XV Staci Naomi">
-	<main class="w-full xs:max-w-full ms:max-w-[500px] mx-auto bg-black min-h-screen">
-		<header class="flex justify-center items-center flex-col relative">
+	<main class="w-full max-w-full ms:max-w-[500px] mx-auto bg-black min-h-screen overflow-x-hidden">
+		<header class="flex justify-center items-center flex-col relative w-full">
 			<img
 				src="/invites/xv/staci/staci-naomi-hero.webp"
 				alt="Staci Naomi"
@@ -40,7 +40,7 @@ import Gallery from '../../../../components/xv/staci/GalleryXV.astro'
 				</h3>
 			</div>
 		</header>
-		<section class="first-message bg-[#ba999b] text-white py-6 px-8 relative">
+		<section class="first-message bg-[#ba999b] text-white py-6 px-8 relative w-full">
 			<p
 				class="text-center font-light py-8 italic xs:text-base ms:text-xl z-10 delay-[0ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
 				data-taos-offset="-200"
@@ -92,7 +92,7 @@ import Gallery from '../../../../components/xv/staci/GalleryXV.astro'
 				class="absolute bottom-0 left-0 rotate-180 w-full"
 			/>
 		</section>
-		<section class="bg-white flex justify-center items-center flex-col py-16 gap-16">
+		<section class="bg-white flex justify-center items-center flex-col py-16 gap-16 w-full">
 			<h4
 				style="font-family:Cinzel Decorative;"
 				class="text-3xl mb-[4rem] delay-[0ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
@@ -107,7 +107,7 @@ import Gallery from '../../../../components/xv/staci/GalleryXV.astro'
 				address="Av. Texcoco S/N, Floresta, 56420 Los Reyes Acaquilpan, Méx."
 				date="Sábado 22 de junio de 2024"
 				time="17:45 hrs."
-				link="https://maps.app.goo.gl/S4bKFDcECCReFRXQ8"
+				link="https://maps.app.goo.gl/4p2wnQSzj9JLYAU19"
 			/>
 			<div class="mb-[2rem]"></div>
 			<PlaceCard
@@ -117,7 +117,7 @@ import Gallery from '../../../../components/xv/staci/GalleryXV.astro'
 				address="Tenancingo Manzana 013, 56430 Los Reyes Acaquilpan, Méx."
 				date="Sábado 22 de junio de 2024"
 				time="19:00 hrs."
-				link="https://maps.app.goo.gl/4p2wnQSzj9JLYAU19"
+				link="https://maps.app.goo.gl/S4bKFDcECCReFRXQ8"
 			/>
 		</section>
 		<section class="bg-[#ba999b] flex justify-center items-center flex-col py-16 relative w-full">
@@ -131,7 +131,7 @@ import Gallery from '../../../../components/xv/staci/GalleryXV.astro'
 			</h4>
 			<TimeLine />
 		</section>
-		<section>
+		<section class="w-full">
 			<div class="bg-white pt-16 pb-0 px-8 relative w-full">
 				<img
 					src="/invites/xv/staci/waves-secondary.svg"
@@ -192,25 +192,25 @@ import Gallery from '../../../../components/xv/staci/GalleryXV.astro'
 					class="text-3xl mb-[2rem] mt-6 text-center delay-[0ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
 					data-taos-offset="-30"
 				>
-					Galeria
+					Galería
 				</h4>
 				<Gallery />
 			</div>
 		</section>
-		<section>
-			<div class="bg-[#ba999b] py-16 px-8 relative">
-				<img src="/invites/xv/staci/waves.svg" alt="waves" class="absolute top-0 left-0" />
+		<section class="w-full">
+			<div class="bg-[#ba999b] py-16 px-8 relative w-full">
+				<img src="/invites/xv/staci/waves.svg" alt="waves" class="absolute top-0 left-0 w-full" />
 
 				<ConfirmAsistance client:only="react" />
 				<img
 					src="/invites/xv/staci/waves.svg"
 					alt="waves"
-					class="absolute bottom-0 left-0 rotate-180"
+					class="absolute bottom-0 left-0 rotate-180 w-full"
 				/>
 			</div>
 		</section>
-		<footer>
-			<div class="bg-white py-4 text-center">
+		<footer class="w-full">
+			<div class="bg-white py-4 text-center w-full">
 				<p style="font-family: 'Lora';" class="italic text-lg">Con ❤️ Staci Naomi</p>
 			</div>
 		</footer>

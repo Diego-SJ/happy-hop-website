@@ -72,7 +72,7 @@ const ConfirmAsistance = () => {
 				<form className="mt-8 mb-8 w-full ms:px-10">
 					<label
 						htmlFor="countries"
-						className="block mb-2 text-base font-medium text-gray-900 dark:text-white font-['Lora'] italic "
+						className="block mb-2 text-base font-medium text-white  font-['Lora'] italic "
 					>
 						¿Asitirás?
 					</label>
@@ -81,7 +81,7 @@ const ConfirmAsistance = () => {
 						name="attendance"
 						value={formData.attendance}
 						onChange={handleChange}
-						className="bg-gray-50 border border-gray-300 text-gray-900 text-sm  focus:ring-[#ffffff] focus:border-[#ba999b] block w-full p-2 outline-none mb-4"
+						className="bg-gray-50 border border-gray-300 text-[#ba999b] text-sm  focus:ring-[#ffffff] focus:border-[#ba999b] block w-full p-2 outline-none mb-4"
 					>
 						<option value="">Selecciona una opción</option>
 						<option value="yes">Sí</option>
@@ -90,7 +90,7 @@ const ConfirmAsistance = () => {
 
 					<label
 						htmlFor="name"
-						className="block mb-2 text-base font-medium text-gray-900 dark:text-white font-['Lora'] italic "
+						className="block mb-2 text-base font-medium text-white  font-['Lora'] italic "
 					>
 						Nombre(s) y Apellido(s):
 					</label>
@@ -101,14 +101,14 @@ const ConfirmAsistance = () => {
 						id="name"
 						name="name"
 						onFocus={({ target }) => target.select()}
-						className="bg-gray-50 border border-gray-300 text-gray-900 text-sm  focus:ring-[#ffffff] focus:border-[#ba999b] block w-full p-2 outline-none mb-4"
+						className="bg-gray-50 border border-gray-300 text-[#ba999b] text-sm  focus:ring-[#ffffff] focus:border-[#ba999b] block w-full p-2 outline-none mb-4"
 					/>
 
 					{formData.attendance === 'yes' && (
 						<>
 							<label
 								htmlFor="guests"
-								className="block mb-2 text-base font-medium text-gray-900 dark:text-white font-['Lora'] italic "
+								className="block mb-2 text-base font-medium text-white  font-['Lora'] italic "
 							>
 								No. de invitados:
 							</label>
@@ -119,7 +119,7 @@ const ConfirmAsistance = () => {
 								onFocus={({ target }) => target.select()}
 								id="guests"
 								name="guests"
-								className="bg-gray-50 border border-gray-300 text-gray-900 text-sm  focus:ring-[#ffffff] focus:border-[#ba999b] block w-full p-2 outline-none mb-4"
+								className="bg-gray-50 border border-gray-300 text-[#ba999b] text-sm  focus:ring-[#ffffff] focus:border-[#ba999b] block w-full p-2 outline-none mb-4"
 							/>
 						</>
 					)}
