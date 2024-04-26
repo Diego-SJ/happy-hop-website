@@ -46,17 +46,71 @@ const { title, ogDescription, ogUrl } = Astro.props
 	<body>
 		<slot />
 
-		<!-- <audio id="my_audio" autoplay loop>
-			<source src="/audio/sunshine.mp3" type="audio/mpeg" />
-		</audio> -->
+		<button class="fixed w-10 h-10 bg-[#ba999b]/50 top-[4rem] right-0 p-1 z-20">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="Play" class="hidden"
+				><path
+					d="M12 39c-.549 0-1.095-.15-1.578-.447A3.008 3.008 0 0 1 9 36V12c0-1.041.54-2.007 1.422-2.553a3.014 3.014 0 0 1 2.919-.132l24 12a3.003 3.003 0 0 1 0 5.37l-24 12c-.42.21-.885.315-1.341.315z"
+					fill="#ffffff"
+					class="color000000 svgShape"></path></svg
+			>
+			<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" id="Pause"
+				><path
+					fill="#ffffff"
+					d="M8 5a2 2 0 0 0-2 2v10a2 2 0 1 0 4 0V7a2 2 0 0 0-2-2zm8 0a2 2 0 0 0-2 2v10a2 2 0 1 0 4 0V7a2 2 0 0 0-2-2z"
+					class="color000000 svgShape"></path></svg
+			>
+		</button>
+
+		<audio id="my_audio" autoplay loop>
+			<source src="/audio/faded.mp3" type="audio/mpeg" />
+		</audio>
 
 		<script>
+			let playIcon = document.querySelector('#Play') as SVGElement
+			let pauseIcon = document.querySelector('#Pause') as SVGElement
+
 			window.onload = function () {
 				const audioElement = document.getElementById('my_audio') as HTMLAudioElement
 				if (audioElement) {
 					audioElement.play()
+					window.localStorage.setItem('audio_playing', 'true')
+					if (playIcon) {
+						playIcon.setAttribute('style', 'display: none')
+					}
+
+					if (pauseIcon) {
+						pauseIcon.setAttribute('style', 'display: block')
+					}
 				}
 			}
+
+			document.addEventListener('click', function () {
+				const audioElement = document.getElementById('my_audio') as HTMLAudioElement
+				if (audioElement) {
+					let isPlaying = window.localStorage.getItem('audio_playing')
+					if (isPlaying === 'true') {
+						audioElement.pause()
+						window.localStorage.setItem('audio_playing', 'false')
+						if (playIcon) {
+							playIcon.setAttribute('style', 'display: block')
+						}
+
+						if (pauseIcon) {
+							pauseIcon.setAttribute('style', 'display: none')
+						}
+					} else {
+						audioElement.play()
+						window.localStorage.setItem('audio_playing', 'true')
+						if (playIcon) {
+							playIcon.setAttribute('style', 'display: none')
+						}
+
+						if (pauseIcon) {
+							pauseIcon.setAttribute('style', 'display: block')
+						}
+					}
+				}
+			})
 		</script>
 		<script src="https://unpkg.com/taos@1.0.5/dist/taos.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
