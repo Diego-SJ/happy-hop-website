@@ -44,6 +44,7 @@ const useConfirmAttendance = (id: string) => {
 		let newData = { ...currentInvite, guests }
 
 		await sendXVAttendance(id, currentInvite?.id, newData, data)
+		await fetchInvite()
 		setCurrentInvite(newData)
 		setLoading(false)
 	}

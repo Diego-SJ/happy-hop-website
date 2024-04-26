@@ -38,26 +38,34 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({
 	}
 
 	return (
-		<div className="py-10 flex flex-col justify-center items-center bg-white">
-			<img src="/invites/xv/staci/decoration1.svg" alt="decoration" className="w-[50%] mb-8" />
-			<p
-				className="mb-4 font-[Handlee] xs:text-[1.3rem] ms:text-[1.5rem] text-zinc-500 animate-fade-up animate-once animate-duration-700 animate-delay-[600ms] text-center"
-				style={{ fontFamily: 'Cinzel Decorative' }}
-			>
-				Cuenta regresiva
-			</p>
-			<div className="text-center w-full animate-fade-up animate-once animate-duration-700 animate-delay-[800ms]">
-				<div className="grid grid-cols-4 w-full">
-					<Square title="días" value={formatTime(timeLeft.days)} />
-					<Square title="hrs" value={formatTime(timeLeft.hours)} />
-					<Square title="min" value={formatTime(timeLeft.minutes)} />
-					<Square title="seg" value={formatTime(timeLeft.seconds)} />
+		<div className="py-10 flex flex-col justify-center items-center bg-white ">
+			<img
+				src="/invites/xv/staci/decoration1.svg"
+				alt="decoration"
+				className="w-[50%] mb-8 delay-[0ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+				data-taos-offset="-10"
+			/>
+			<div className="animate-fade-up delay-100 w-full">
+				<p
+					style={{ fontFamily: 'Cinzel Decorative' }}
+					className="mb-4 font-[Handlee] xs:text-[1.3rem] ms:text-[1.5rem] text-zinc-500 text-center"
+				>
+					Cuenta regresiva
+				</p>
+				<div className="text-center w-full">
+					<div className="grid grid-cols-4 w-full">
+						<Square title="días" value={formatTime(timeLeft.days)} />
+						<Square title="hrs" value={formatTime(timeLeft.hours)} />
+						<Square title="min" value={formatTime(timeLeft.minutes)} />
+						<Square title="seg" value={formatTime(timeLeft.seconds)} />
+					</div>
 				</div>
 			</div>
 			<img
 				src="/invites/xv/staci/decoration1.svg"
 				alt="decoration"
-				className="w-[50%] mt-8 rotate-180"
+				className="w-[50%] mt-8 rotate-180 delay-[0ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+				data-taos-offset="-100"
 			/>
 		</div>
 	)

@@ -52,7 +52,11 @@ const { title, ogDescription, ogUrl } = Astro.props
 				}
 			}
 		</script>
+		<script src="https://unpkg.com/taos@1.0.5/dist/taos.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+		<script>
+			document.documentElement.classList.add('js')
+		</script>
 	</body>
 </html>
 <style is:global>

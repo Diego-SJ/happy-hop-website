@@ -24,31 +24,39 @@ const { imageUrl, title, subtitle, address, date, time, link } = Astro.props
 		/>
 	</picture>
 	<h2
-		class="xs:text-3xl ms:text-5xl text-center text-[#ce9f95] xs:mt-[3rem] ms:mt-[5rem] xs:mb-2 ms:mb-4"
+		class="xs:text-3xl ms:text-5xl text-center text-[#ce9f95] xs:mt-[3rem] ms:mt-[5rem] xs:mb-2 ms:mb-4 delay-[0ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+		data-taos-offset="-50"
 		style="font-family: 'MonteCarlo';"
 	>
 		{title}
 	</h2>
 	<div class="xs:px-8 ms:px-[4rem]">
 		<h3
-			class="text-[#5d5e5b] text-center italic mb-4 xs:text-base ms:text-xl"
+			class="text-[#5d5e5b] text-center italic mb-4 xs:text-base ms:text-xl delay-[200ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+			data-taos-offset="-50"
 			style="font-family: 'Lora';"
 		>
 			{subtitle}
 		</h3>
 		<p
-			class="text-[#5d5e5b] text-center italic mb-4 xs:text-sm ms:text-base"
+			class="text-[#5d5e5b] text-center italic mb-4 xs:text-sm ms:text-base delay-[400ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+			data-taos-offset="-50"
 			style="font-family: 'Lora';"
 		>
 			{address}
 		</p>
 		<p
-			class="text-[#6f706f] text-center xs:text-sm ms:text-xl italic mb-0"
+			class="text-[#6f706f] text-center xs:text-sm ms:text-xl italic mb-0 delay-[600ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+			data-taos-offset="-50"
 			style="font-family: 'Lora';"
 		>
 			{date}
 		</p>
-		<p class="text-[#5d5e5b] text-center xs:text-sm ms:text-xl italic" style="font-family: 'Lora';">
+		<p
+			class="text-[#5d5e5b] text-center xs:text-sm ms:text-xl italic delay-[800ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+			data-taos-offset="-50"
+			style="font-family: 'Lora';"
+		>
 			{time}
 		</p>
 	</div>
@@ -56,7 +64,8 @@ const { imageUrl, title, subtitle, address, date, time, link } = Astro.props
 		<a
 			href={link}
 			target="_blank"
-			class="bg-[#ce9f95] text-white py-2 px-4 xs:text-sm ms:text-base w-full text-center hover:shadow-lg transition duration-300 ease-in-out"
+			class="bg-[#ce9f95] text-white py-2 px-4 xs:text-sm ms:text-base w-full text-center hover:shadow-lg transition ease-in-out delay-[1000ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+			data-taos-offset="-50"
 			style="font-family: 'Lora';"
 		>
 			Ver en Google Maps

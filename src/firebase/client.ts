@@ -87,6 +87,7 @@ export const sendXVAttendance = async (
 		const inviteRef = doc(db, 'invites/xv/v1', id)
 		await updateDoc(inviteRef, updatedData)
 		localStorage.setItem(`vote_${name}`, JSON.stringify(myData))
+
 		return true
 	} catch (error) {
 		console.log({ error })

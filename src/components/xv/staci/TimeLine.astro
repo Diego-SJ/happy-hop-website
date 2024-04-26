@@ -1,6 +1,13 @@
+---
+import AddToCalendarButton from './AddToCalendarButton'
+---
+
 <div class="flex flex-col w-full px-4">
 	<div class="grid grid-cols-[1fr_1px_1fr] items-center relative">
-		<div class="flex flex-col justify-center items-center text-center py-8">
+		<div
+			class="flex flex-col justify-center items-center text-center py-8 delay-[100ms] duration-[1000ms] taos:translate-x-[200px] taos:opacity-0"
+			data-taos-offset="10"
+		>
 			<picture
 				class="w-20 h-20 border-2 bg-[#d1bbbc83] border-white rounded-full flex justify-center items-center mb-4"
 			>
@@ -16,29 +23,36 @@
 			>
 				Parroquia de Nuestra Señora del Carmen
 			</p>
-			<a
-				href="https://maps.app.goo.gl/S4bKFDcECCReFRXQ8"
-				target="_blank"
-				class="bg-white text-[#ce9f95] py-2 px-4 xs:text-sm ms:text-base w-[5rem] text-center hover:shadow-lg transition duration-300 ease-in-out"
-				style="font-family: 'Lora';"
-			>
-				Mapa
-			</a>
+			<AddToCalendarButton
+				client:only="react"
+				eventName="Misa de XV años - Staci Naomi"
+				locationUrl="https://maps.app.goo.gl/S4bKFDcECCReFRXQ8"
+				date={{ startDate: '2024-06-22', startTime: '17:45', endTime: '18:45' }}
+			/>
 		</div>
 		<div class="h-full w-full bg-white opacity-40"></div>
-		<div class="flex justify-start items-center pl-6 ms:pl-12 py-8">
+		<div
+			class="flex justify-start items-center pl-6 ms:pl-12 py-8 delay-[200ms] duration-[1000ms] taos:translate-x-[-200px] taos:opacity-0"
+			data-taos-offset="10"
+		>
 			<p class="text-white opacity-80 italic font-[Lora] text-base">5:45 PM</p>
 		</div>
 	</div>
 
 	<div class="grid grid-cols-[1fr_1px_1fr] items-center relative">
-		<div class="flex justify-end items-center pr-4 ms:pr-12 py-8">
+		<div
+			class="flex justify-end items-center pr-4 ms:pr-12 py-8 delay-[100ms] duration-[1000ms] taos:translate-x-[-200px] taos:opacity-0"
+			data-taos-offset="10"
+		>
 			<p class="text-white opacity-80 italic font-[Lora] text-base max-w-[8ch]">
 				7:00 PM A 7:30 PM
 			</p>
 		</div>
 		<div class="h-full w-full bg-white opacity-40"></div>
-		<div class="flex flex-col justify-center items-center text-center py-8">
+		<div
+			class="flex flex-col justify-center items-center text-center py-8 delay-[200ms] duration-[1000ms] taos:translate-x-[200px] taos:opacity-0"
+			data-taos-offset="10"
+		>
 			<picture
 				class="w-20 h-20 border-2 bg-[#d1bbbc83] border-white rounded-full flex justify-center items-center mb-4"
 			>
@@ -56,19 +70,20 @@
 			>
 				Salón de eventos El Rey León
 			</p>
-			<a
-				href="https://maps.app.goo.gl/4p2wnQSzj9JLYAU19"
-				target="_blank"
-				class="bg-white text-[#ce9f95] py-2 px-4 xs:text-sm ms:text-base w-[5rem] text-center hover:shadow-lg transition duration-300 ease-in-out"
-				style="font-family: 'Lora';"
-			>
-				Mapa
-			</a>
+			<AddToCalendarButton
+				client:only="react"
+				eventName="Recepción de XV años - Staci Naomi"
+				locationUrl="https://maps.app.goo.gl/4p2wnQSzj9JLYAU19"
+				date={{ startDate: '2024-06-22', startTime: '19:00', endTime: '19:30' }}
+			/>
 		</div>
 	</div>
 
 	<div class="grid grid-cols-[1fr_1px_1fr] items-center relative">
-		<div class="flex flex-col justify-center items-center text-center py-8">
+		<div
+			class="flex flex-col justify-center items-center text-center py-8 delay-[100ms] duration-[1000ms] taos:translate-x-[200px] taos:opacity-0"
+			data-taos-offset="10"
+		>
 			<picture
 				class="w-20 h-20 border-2 bg-[#d1bbbc83] border-white rounded-full flex justify-center items-center mb-4"
 			>
@@ -82,17 +97,26 @@
 			</p>
 		</div>
 		<div class="h-full w-full bg-white opacity-40"></div>
-		<div class="flex justify-start items-center pl-6 ms:pl-12 py-8">
+		<div
+			class="flex justify-start items-center pl-6 ms:pl-12 py-8 delay-[200ms] duration-[1000ms] taos:translate-x-[-200px] taos:opacity-0"
+			data-taos-offset="10"
+		>
 			<p class="text-white opacity-80 italic font-[Lora] text-base">7:40 PM</p>
 		</div>
 	</div>
 
 	<div class="grid grid-cols-[1fr_1px_1fr] items-center relative">
-		<div class="flex justify-end items-center pr-4 ms:pr-12 py-8">
+		<div
+			class="flex justify-end items-center pr-4 ms:pr-12 py-8 delay-[100ms] duration-[1000ms] taos:translate-x-[-200px] taos:opacity-0"
+			data-taos-offset="10"
+		>
 			<p class="text-white opacity-80 italic font-[Lora] text-base max-w-[8ch]">8:15 PM</p>
 		</div>
 		<div class="h-full w-full bg-white opacity-40"></div>
-		<div class="flex flex-col justify-center items-center text-center py-8">
+		<div
+			class="flex flex-col justify-center items-center text-center py-8 delay-[100ms] duration-[1000ms] taos:translate-x-[200px] taos:opacity-0"
+			data-taos-offset="10"
+		>
 			<picture
 				class="w-20 h-20 border-2 bg-[#d1bbbc83] border-white rounded-full flex justify-center items-center mb-4"
 			>
@@ -112,7 +136,10 @@
 	</div>
 
 	<div class="grid grid-cols-[1fr_1px_1fr] items-center relative">
-		<div class="flex flex-col justify-center items-center text-center py-8">
+		<div
+			class="flex flex-col justify-center items-center text-center py-8 delay-[100ms] duration-[1000ms] taos:translate-x-[200px] taos:opacity-0"
+			data-taos-offset="10"
+		>
 			<picture
 				class="w-20 h-20 border-2 bg-[#d1bbbc83] border-white rounded-full flex justify-center items-center mb-4"
 			>
@@ -132,17 +159,26 @@
 			</p>
 		</div>
 		<div class="h-full w-full bg-white opacity-40"></div>
-		<div class="flex justify-start items-center pl-6 ms:pl-12 py-8">
+		<div
+			class="flex justify-start items-center pl-6 ms:pl-12 py-8 delay-[100ms] duration-[1000ms] taos:translate-x-[-200px] taos:opacity-0"
+			data-taos-offset="10"
+		>
 			<p class="text-white opacity-80 italic font-[Lora] text-base">9:15 PM</p>
 		</div>
 	</div>
 
 	<div class="grid grid-cols-[1fr_1px_1fr] items-center relative">
-		<div class="flex justify-end items-center pr-4 ms:pr-12 py-8">
+		<div
+			class="flex justify-end items-center pr-4 ms:pr-12 py-8 delay-[100ms] duration-[1000ms] taos:translate-x-[-200px] taos:opacity-0"
+			data-taos-offset="10"
+		>
 			<p class="text-white opacity-80 italic font-[Lora] text-base max-w-[8ch]">9:45 PM</p>
 		</div>
 		<div class="h-full w-full bg-white opacity-40"></div>
-		<div class="flex flex-col justify-center items-center text-center py-8">
+		<div
+			class="flex flex-col justify-center items-center text-center py-8 delay-[100ms] duration-[1000ms] taos:translate-x-[200px] taos:opacity-0"
+			data-taos-offset="10"
+		>
 			<picture
 				class="w-20 h-20 border-2 bg-[#d1bbbc83] border-white rounded-full flex justify-center items-center mb-4"
 			>
@@ -162,7 +198,10 @@
 	</div>
 
 	<div class="grid grid-cols-[1fr_1px_1fr] items-center relative">
-		<div class="flex flex-col justify-center items-center text-center py-8">
+		<div
+			class="flex flex-col justify-center items-center text-center py-8 delay-[100ms] duration-[1000ms] taos:translate-x-[200px] taos:opacity-0"
+			data-taos-offset="10"
+		>
 			<picture
 				class="w-20 h-20 border-2 bg-[#d1bbbc83] border-white rounded-full flex justify-center items-center mb-4"
 			>
@@ -182,7 +221,10 @@
 			</p>
 		</div>
 		<div class="h-full w-full bg-white opacity-40"></div>
-		<div class="flex justify-start items-center pl-6 ms:pl-12 py-8">
+		<div
+			class="flex justify-start items-center pl-6 ms:pl-12 py-8 delay-[100ms] duration-[1000ms] taos:translate-x-[-200px] taos:opacity-0"
+			data-taos-offset="10"
+		>
 			<p class="text-white opacity-80 italic font-[Lora] text-base"></p>
 		</div>
 	</div>

@@ -36,15 +36,23 @@ const ConfirmAsistance = () => {
 		<div className="mb-6">
 			<h4
 				style={{ fontFamily: 'Cinzel Decorative' }}
-				className=" text-2xl mb-[1rem] mt-6 ms:text-3xl text-white text-center px-4"
+				className={`text-2xl mb-[1rem] mt-6 ms:text-3xl text-white text-center px-4 ${
+					voteSent ? 'animate-fade-up' : ''
+				}`}
 			>
 				{voteSent ? '¡Gracias por confirmar!' : 'Confirma tu asistencia'}
 			</h4>
 
+			<img
+				src="/invites/xv/staci/decoration-white.svg"
+				alt="decoration"
+				className={`w-[50%] mx-auto mb-6 ${voteSent ? 'animate-fade-up' : ''}`}
+			/>
+
 			{voteSent && (
 				<h3
 					style={{ fontFamily: 'Cinzel Decorative' }}
-					className=" text-lg mb-[1rem] mt-6 ms:text-2xl text-white text-center px-4"
+					className=" text-lg mb-[1rem] mt-6 ms:text-2xl text-white text-center px-4 animate-fade-up "
 				>
 					{voteSent.name}
 				</h3>
@@ -52,9 +60,13 @@ const ConfirmAsistance = () => {
 
 			<p
 				style={{ fontFamily: 'Lora' }}
-				className="italic text-center text-lg text-white leading-6 ms:px-8"
+				className={`italic text-center text-lg text-white leading-6 ms:px-8 ${
+					voteSent ? 'animate-fade-up' : ''
+				}`}
 			>
-				Agradecemos tu presencia en este día tan especial para nosotros.
+				{voteSent?.attendance
+					? '	Agradecemos tu presencia en este día tan especial para nosotros.'
+					: 'Lamentamos que no puedas acompañarnos en este día tan especial.'}
 			</p>
 			{!voteSent && (
 				<form className="mt-8 mb-8 w-full ms:px-10">
@@ -88,6 +100,7 @@ const ConfirmAsistance = () => {
 						onChange={handleChange}
 						id="name"
 						name="name"
+						onFocus={({ target }) => target.select()}
 						className="bg-gray-50 border border-gray-300 text-gray-900 text-sm  focus:ring-[#ffffff] focus:border-[#ba999b] block w-full p-2 outline-none mb-4"
 					/>
 
@@ -103,6 +116,7 @@ const ConfirmAsistance = () => {
 								type="number"
 								value={formData.guests}
 								onChange={handleChange}
+								onFocus={({ target }) => target.select()}
 								id="guests"
 								name="guests"
 								className="bg-gray-50 border border-gray-300 text-gray-900 text-sm  focus:ring-[#ffffff] focus:border-[#ba999b] block w-full p-2 outline-none mb-4"
@@ -110,9 +124,14 @@ const ConfirmAsistance = () => {
 						</>
 					)}
 					<button
-						disabled={loading}
+						disabled={
+							loading ||
+							!formData.attendance ||
+							!formData.name ||
+							(!formData.guests && formData.attendance === 'yes')
+						}
 						onClick={handleSelect}
-						className="mt-6 font-['Lora'] bg-[#6d5153] text-white py-2 px-4 xs:text-sm ms:text-base w-full text-center hover:shadow-lg transition duration-300 ease-in-out"
+						className="disabled:bg-[#977375] disabled:cursor-not-allowed mt-6 font-['Lora'] bg-[#6d5153] text-white py-2 px-4 xs:text-sm ms:text-base w-full text-center hover:shadow-lg hover:disabled:shadow-none transition duration-300 ease-in-out"
 					>
 						{loading ? 'Enviando...' : 'Enviar confirmación'}
 					</button>

@@ -1,10 +1,10 @@
 ---
-import LayoutInvite from '../../../layouts/LayoutXV.astro'
-import PlaceCard from '../../../components/xv/staci/PlaceCard.astro'
-import ConfirmAsistance from '../../../components/xv/staci/ConfirmAsistance'
-import CountdownTimer from '../../../components/xv/staci/CountdownTimer'
-import TimeLine from '../../../components/xv/staci/TimeLine.astro'
-import Gallery from '../../../components/xv/staci/GalleryXV.astro'
+import LayoutInvite from '../../../../layouts/LayoutXV.astro'
+import PlaceCard from '../../../../components/xv/staci/PlaceCard.astro'
+import ConfirmAsistance from '../../../../components/xv/staci/ConfirmAsistance'
+import CountdownTimer from '../../../../components/xv/staci/CountdownTimer'
+import TimeLine from '../../../../components/xv/staci/TimeLine.astro'
+import Gallery from '../../../../components/xv/staci/GalleryXV.astro'
 ---
 
 <LayoutInvite title="XV Staci Naomi">
@@ -18,16 +18,22 @@ import Gallery from '../../../components/xv/staci/GalleryXV.astro'
 			/>
 			<div class="absolute bottom-0 py-4 flex justify-center items-center flex-col text-center">
 				<h1
-					class="text-white xs:text-2xl ms:text-3xl pl-2"
+					class="text-white xs:text-2xl ms:text-3xl pl-2 delay-[0ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+					data-taos-offset="-100"
 					style="font-family: 'Cinzel Decorative';"
 				>
 					mis xv años
 				</h1>
-				<h2 class="text-white xs:text-6xl ms:text-7xl mt-1 mb-4" style="font-family: 'MonteCarlo';">
+				<h2
+					class="text-white xs:text-6xl ms:text-7xl mt-1 mb-4 delay-[100ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+					data-taos-offset="-100"
+					style="font-family: 'MonteCarlo';"
+				>
 					Staci Naomi
 				</h2>
 				<h3
-					class="text-white xs:text-1xl ms:text-3xl mb-2 pl-2"
+					class="text-white xs:text-1xl ms:text-3xl mb-2 pl-2 delay-[200ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+					data-taos-offset="-200"
 					style="font-family: 'Cinzel Decorative';"
 				>
 					22 de Junio
@@ -36,7 +42,8 @@ import Gallery from '../../../components/xv/staci/GalleryXV.astro'
 		</header>
 		<section class="first-message bg-[#ba999b] text-white py-6 px-8 relative">
 			<p
-				class="text-center font-light py-8 italic xs:text-base ms:text-xl z-10"
+				class="text-center font-light py-8 italic xs:text-base ms:text-xl z-10 delay-[0ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+				data-taos-offset="-200"
 				style="font-family: 'Lora';"
 			>
 				Que estos 15 Años que hoy empiezo a vivir y de los cuales no me olvidaré por ser un día tan
@@ -49,13 +56,18 @@ import Gallery from '../../../components/xv/staci/GalleryXV.astro'
 			<img src="/invites/xv/staci/waves.svg" alt="waves" class="absolute top-0 left-0" />
 			<div class="flex flex-col mb-4">
 				<h4
-					class="text-center font-light xs:text-4xl ms:text-5xl mb-4"
+					class="text-center font-light xs:text-4xl ms:text-5xl mb-4 delay-[0ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+					data-taos-offset="-50"
 					style="font-family: 'MonteCarlo';"
 				>
 					Mis padres
 				</h4>
 
-				<p style="font-family: 'Lora';" class="italic text-center text-lg">
+				<p
+					style="font-family: 'Lora';"
+					class="italic text-center text-lg delay-[200ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+					data-taos-offset="-50"
+				>
 					Sr. Andrés Hernández Navarrete
 					<br />
 					Sra. Elisa Gonzaga Tagle
@@ -64,11 +76,13 @@ import Gallery from '../../../components/xv/staci/GalleryXV.astro'
 			<img
 				src="/invites/xv/staci/decoration-white.svg"
 				alt="decortion"
-				class="w-[60%] mx-auto mb-8"
+				class="w-[60%] mx-auto mb-8 delay-[400ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+				data-taos-offset="-50"
 			/>
 			<p
 				style="font-family: 'Lora';"
-				class="italic text-center xs:text-xl ms:text-xl mb-3 xs:max-w-[98%] ms:max-w-[75%] mx-auto"
+				class="italic text-center xs:text-xl ms:text-xl mb-3 xs:max-w-[98%] ms:max-w-[75%] mx-auto delay-[800ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+				data-taos-offset="-50"
 			>
 				Nos complace invitarte a ser parte de este gran día.
 			</p>
@@ -79,7 +93,13 @@ import Gallery from '../../../components/xv/staci/GalleryXV.astro'
 			/>
 		</section>
 		<section class="bg-white flex justify-center items-center flex-col py-16 gap-16">
-			<h4 style="font-family:Cinzel Decorative;" class="text-3xl mb-[4rem]">Ubicaciones</h4>
+			<h4
+				style="font-family:Cinzel Decorative;"
+				class="text-3xl mb-[4rem] delay-[0ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+				data-taos-offset="-50"
+			>
+				Ubicaciones
+			</h4>
 			<PlaceCard
 				imageUrl="/invites/xv/staci/church1.webp"
 				title="Ceremonia Religiosa"
@@ -102,7 +122,11 @@ import Gallery from '../../../components/xv/staci/GalleryXV.astro'
 		</section>
 		<section class="bg-[#ba999b] flex justify-center items-center flex-col py-16 relative">
 			<img src="/invites/xv/staci/waves.svg" alt="waves" class="absolute top-0 left-0" />
-			<h4 style="font-family:Cinzel Decorative;" class="text-3xl mb-[1rem] mt-6 text-white">
+			<h4
+				style="font-family:Cinzel Decorative;"
+				class="text-3xl mb-[1rem] mt-6 text-white delay-[0ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+				data-taos-offset="-50"
+			>
 				Itinerario
 			</h4>
 			<TimeLine />
@@ -114,27 +138,60 @@ import Gallery from '../../../components/xv/staci/GalleryXV.astro'
 					alt="waves"
 					class="absolute top-0 left-0"
 				/>
-				<h4 style="font-family:Cinzel Decorative;" class="text-3xl mb-[1rem] mt-6 text-center">
+				<h4
+					style="font-family:Cinzel Decorative;"
+					class="text-3xl mb-[1rem] mt-6 text-center delay-[0ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+					data-taos-offset="-30"
+				>
 					Dresscode
 				</h4>
-				<p style="font-family: 'Lora';" class="italic text-center text-2xl">Formal</p>
-				<div class="flex justify-center my-6 ms:my-10 mb-20">
+				<p
+					style="font-family: 'Lora';"
+					class="italic text-center text-2xl delay-[200ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+					data-taos-offset="-30"
+				>
+					Formal
+				</p>
+				<div
+					class="flex justify-center my-6 ms:my-10 mb-20 delay-[400ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+					data-taos-offset="-30"
+				>
 					<img src="/invites/xv/staci/woman.svg" alt="decortion" class="w-20 ms:w-28" />
 					<img src="/invites/xv/staci/man.svg" alt="waves" class="w-20 ms:w-28" />
 				</div>
 				<img
 					src="/invites/xv/staci/decoration2.svg"
 					alt="decortion"
-					class="w-[60%] mx-auto mb-10 rotate-180"
+					class="w-[60%] mx-auto mb-10 rotate-180 delay-[600ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+					data-taos-offset="-30"
 				/>
-				<p style="font-family: 'Lora';" class="italic text-center text-lg mb-4 max-w-[70%] mx-auto">
+				<p
+					style="font-family: 'Lora';"
+					class="italic text-center text-lg mb-4 max-w-[70%] mx-auto delay-[800ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+					data-taos-offset="-30"
+				>
 					Comparte las fotos de mis quince años con el hashtag
 				</p>
-				<p style="font-family: 'Lora';" class="italic text-center text-2xl mb-10">#NaomiFest🧡</p>
-				<img src="/invites/xv/staci/decoration2.svg" alt="decortion" class="w-[60%] mx-auto" />
+				<p
+					style="font-family: 'Lora';"
+					class="italic text-center text-2xl mb-10 delay-[1000ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+					data-taos-offset="-30"
+				>
+					#NaomiFest🧡
+				</p>
+				<img
+					src="/invites/xv/staci/decoration2.svg"
+					alt="decortion"
+					class="w-[60%] mx-auto delay-[1100ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+					data-taos-offset="-30"
+				/>
 			</div>
 			<div class="bg-white py-10 px-8 relative">
-				<h4 style="font-family:Cinzel Decorative;" class="text-3xl mb-[2rem] mt-6 text-center">
+				<h4
+					style="font-family:Cinzel Decorative;"
+					class="text-3xl mb-[2rem] mt-6 text-center delay-[0ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+					data-taos-offset="-30"
+				>
 					Galeria
 				</h4>
 				<Gallery />
