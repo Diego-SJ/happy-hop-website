@@ -5,7 +5,7 @@ interface CountdownTimerProps {
 }
 
 const CountdownTimer: React.FC<CountdownTimerProps> = ({
-	targetDate = new Date(2024, 6, 22, 17, 0)
+	targetDate = new Date(2024, 5, 22, 17, 45)
 }) => {
 	const calculateTimeLeft = () => {
 		const difference = targetDate.getTime() - new Date().getTime()
