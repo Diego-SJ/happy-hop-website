@@ -81,12 +81,15 @@ export const sendXVAttendance = async (
 	name: string,
 	id: string,
 	updatedData: Partial<ConfirmAsistance>,
-	myData: { name: string; attendance: boolean; guests: number }
+	myData?: { name: string; attendance: boolean; guests: number }
 ): Promise<boolean> => {
 	try {
 		const inviteRef = doc(db, 'invites/xv/v1', id)
 		await updateDoc(inviteRef, updatedData)
-		localStorage.setItem(`vote_${name}`, JSON.stringify(myData))
+
+		if (myData) {
+			localStorage.setItem(`vote_${name}`, JSON.stringify(myData))
+		}
 
 		return true
 	} catch (error) {

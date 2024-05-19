@@ -49,12 +49,29 @@ const useConfirmAttendance = (id: string) => {
 		setLoading(false)
 	}
 
+	const deleteByName = async (name_id: string) => {
+		if (!name_id || !currentInvite?.id) return false
+		setLoading(true)
+
+		let guests = [...(currentInvite?.guests || [])]
+
+		guests = guests.filter((i) => i?.name !== name_id)
+
+		let newData = { ...currentInvite, guests }
+
+		await sendXVAttendance(id, currentInvite?.id, newData)
+		await fetchInvite()
+		setCurrentInvite(newData)
+		setLoading(false)
+	}
+
 	return {
 		fetchInvite,
 		currentInvite,
 		loading,
 		sendAttendance,
-		voteSent
+		voteSent,
+		deleteByName
 	}
 }
 
