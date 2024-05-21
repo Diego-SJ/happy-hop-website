@@ -1,0 +1,223 @@
+---
+import LayoutInvite from '../../../../layouts/bautizos/LayoutBautizoV1.astro'
+import PlaceCard from '../../../../components/xv/staci/PlaceCard.astro'
+import CountdownTimer from '../../../../components/xv/staci/CountdownTimer'
+const targetDate = new Date(2024, 5, 8, 15, 0)
+const whatsappNumber = '527716763039'
+const whatsappMessage = 'Hola quiero confirmar mi asistencia al bautizo de Alexander'
+---
+
+<LayoutInvite
+	title="Alexander Azpeitia"
+	ogDescription="Mi bautizo - Alexander Azpeitia"
+	ogImage="https://firebasestorage.googleapis.com/v0/b/test1-d2593.appspot.com/o/assets%2Fwebp%2FCaptura%20de%20pantalla%202024-05-20%20a%20la(s)%208.11.33%20p.m..webp?alt=media&token=a2aa0dff-83d3-48f1-adb7-cd8da0b1effc"
+>
+	<main
+		class="w-full max-w-full ms:max-w-[500px] mx-auto bg-[#f7f7f7] min-h-screen overflow-x-hidden"
+	>
+		<header class="flex justify-center items-center flex-col relative w-full">
+			<img
+				src="/invites/bautizo/bautizo.webp"
+				alt="Staci Naomi"
+				class="staci-hero object-cover w-full min-h-screen max-h-screen"
+			/>
+			<div
+				class="absolute top-[50%] left-1/2 -translate-x-1/2 -translate-y-1/2 py-4 flex justify-center items-center flex-col text-center"
+			>
+				<h1
+					class="text-[#6677ad] xs:text-2xl ms:text-3xl pl-2 delay-[0ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0 font-medium"
+					data-taos-offset="-300"
+					style="font-family: 'Cinzel Decorative';"
+				>
+					mi bautizo
+				</h1>
+				<h2
+					class="text-[#dd982d] xs:text-6xl ms:text-8xl mt-1 mb-10 delay-[100ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0 font-medium"
+					data-taos-offset="-300"
+					style="font-family: 'MonteCarlo';"
+				>
+					Alexander <br /> Azpeitia
+				</h2>
+				<h3
+					class="text-[#6677ad] xs:text-1xl ms:text-3xl mb-2 pl-2 delay-[200ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0 font-medium"
+					data-taos-offset="-300"
+					style="font-family: 'Cinzel Decorative';"
+				>
+					08 de junio
+				</h3>
+			</div>
+		</header>
+		<section class="first-message bg-[var(--primary)] text-white py-6 px-8 relative w-full">
+			<p
+				class="text-center font-light py-8 italic xs:text-base ms:text-xl z-10 delay-[0ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+				data-taos-offset="-200"
+				style="font-family: 'Lora';"
+			>
+				Señor, toma mi pequeño corazón en tus benditas manos a partir de este día en que te ofrezco
+				la inocencia de mi niñez, y jamás te separes de mí.
+			</p>
+		</section>
+		<CountdownTimer
+			client:only="react"
+			targetDate={targetDate}
+			color="var(--secondary)"
+			decorationUrl="/invites/bautizo/decoration.svg"
+		/>
+		<section class="bg-[var(--primary)] text-white py-[10rem] px-8 relative w-full">
+			<img
+				src="/invites/xv/staci/waves.svg"
+				alt="waves"
+				class="absolute top-0 left-0 w-full h-10"
+			/>
+			<div class="flex flex-col mb-4">
+				<h4
+					class="text-center font-light xs:text-4xl ms:text-5xl mb-4 delay-[0ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+					data-taos-offset="-50"
+					style="font-family: 'MonteCarlo';"
+				>
+					Mis padres
+				</h4>
+
+				<img
+					src="/invites/xv/staci/decoration-white.svg"
+					alt="decortion"
+					class="w-[25%] mx-auto mb-4 delay-[400ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+					data-taos-offset="-50"
+				/>
+				<p
+					style="font-family: 'Lora';"
+					class="italic text-center text-lg delay-[200ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+					data-taos-offset="-50"
+				>
+					Sra. Adriana Calva Cruz
+					<br />
+					Sr. Alex Azpeitia Zarco
+				</p>
+			</div>
+
+			<div class="flex flex-col mb-4 mt-16">
+				<h4
+					class="text-center font-light xs:text-4xl ms:text-5xl mb-4 delay-[0ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+					data-taos-offset="-50"
+					style="font-family: 'MonteCarlo';"
+				>
+					Mis padrinos
+				</h4>
+
+				<img
+					src="/invites/xv/staci/decoration-white.svg"
+					alt="decortion"
+					class="w-[25%] mx-auto mb-4 delay-[400ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+					data-taos-offset="-50"
+				/>
+				<p
+					style="font-family: 'Lora';"
+					class="italic text-center text-lg delay-[200ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+					data-taos-offset="-50"
+				>
+					Sra. Adriana Calva Cruz
+					<br />
+					Sr. Alex Azpeitia Zarco
+				</p>
+			</div>
+			<p
+				style="font-family: 'Lora';"
+				class="italic mt-16 text-center xs:text-xl ms:text-xl mb-3 xs:max-w-[98%] ms:max-w-[75%] mx-auto delay-[800ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+				data-taos-offset="-50"
+			>
+				Nos complace invitarte a ser parte de este gran día.
+			</p>
+			<img
+				src="/invites/xv/staci/waves.svg"
+				alt="waves"
+				class="absolute bottom-0 left-0 rotate-180 w-full h-10"
+			/>
+		</section>
+		<section class="bg-white flex justify-center items-center flex-col py-16 gap-16 w-full">
+			<h4
+				style="font-family:Cinzel Decorative;"
+				class="text-3xl mb-[4rem] delay-[0ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+				data-taos-offset="-50"
+			>
+				Ubicaciones
+			</h4>
+			<PlaceCard
+				imageUrl="/invites/bautizo/church.svg"
+				title="Ceremonia Religiosa"
+				subtitle="Parroquia San Nicolas Tolentino"
+				address="Centro Sur, 42500 Actopan, Hgo."
+				date="Sábado 8 de junio de 2024"
+				time="3:00 hrs."
+				color="var(--primary)"
+				link="https://maps.app.goo.gl/L8fGyCAJ2NMK6Edc6"
+			/>
+			<div class="mb-[2rem]"></div>
+			<PlaceCard
+				imageUrl="/invites/bautizo/event-hall.svg"
+				title="Recepción"
+				subtitle="Casa de la familia Azpeitia"
+				address="42600 Actopan, Hidalgo"
+				date="Sábado 8 de junio de 2024"
+				time="17:00 hrs."
+				color="var(--primary)"
+				link="https://maps.app.goo.gl/W8DCg35tLCyShjiE7"
+			/>
+		</section>
+		<section
+			class="bg-[var(--primary)] flex justify-center items-center flex-col py-[9rem] relative w-full"
+		>
+			<img
+				src="/invites/xv/staci/waves.svg"
+				alt="waves"
+				class="absolute top-0 left-0 w-full h-10"
+			/>
+
+			<h4
+				style="font-family:Cinzel Decorative;"
+				class={`text-2xl mb-[2rem] mt-6 ms:text-3xl text-white text-center px-4 `}
+			>
+				Confirma tu asistencia
+			</h4>
+			<a
+				href={`https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${whatsappMessage}`}
+				target="_blank"
+				class="bg-white text-[var(--primary)] py-2 px-6 xs:text-sm ms:text-base w-fit text-center hover:shadow-lg transition ease-in-out delay-[1000ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+				data-taos-offset="-200"
+				style={`font-family: 'Lora'; `}
+			>
+				Envíar whatsapp
+			</a>
+		</section>
+		<footer class="w-full">
+			<div class="bg-white py-4 text-center w-full">
+				<p style="font-family: 'Lora';" class="italic text-lg">
+					© Powered by <a href="/" target="_blank" class="underline">HappyHop</a>
+				</p>
+			</div>
+		</footer>
+	</main>
+
+	<style is:global>
+		@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Dancing+Script:wght@400..700&family=Lora:ital,wght@0,400..700;1,400..700&family=MonteCarlo&display=swap');
+
+		.staci-hero {
+			position: relative;
+			display: inline-block;
+		}
+
+		.first-message {
+			z-index: 1;
+		}
+
+		.first-message::before {
+			content: '"';
+			font-family: 'MonteCarlo', Courier, monospace;
+			position: absolute;
+			top: -20rem;
+			left: -5rem;
+			font-size: 35rem;
+			z-index: -1;
+			color: rgba(255, 255, 255, 0.217);
+		}
+	</style>
+</LayoutInvite>

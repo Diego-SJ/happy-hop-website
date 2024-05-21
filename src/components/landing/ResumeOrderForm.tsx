@@ -1,7 +1,7 @@
 import { useStore } from '@nanostores/react'
-import { $inflatableOrder } from '../store/inflatable-order'
-import { formatDate, getParams } from '../utils/functions'
-import { openWhatsapp } from '../utils/helpers'
+import { $inflatableOrder } from '../../store/inflatable-order'
+import { formatDate, getParams } from '../../utils/functions'
+import { openWhatsapp } from '../../utils/helpers'
 
 type ItemListProps = {
 	title?: string

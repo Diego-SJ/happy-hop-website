@@ -2,9 +2,9 @@ import { useState } from 'react'
 import Radio from './Radio'
 import Input from './Input'
 import TextArea from './TextArea'
-import type { InflatableOrder } from '../types/inflatable'
-import { initialOrderData, updateOrder } from '../store/inflatable-order'
-import { getParams } from '../utils/functions'
+import type { InflatableOrder } from '../../types/inflatable'
+import { initialOrderData, updateOrder } from '../../store/inflatable-order'
+import { getParams } from '../../utils/functions'
 
 type Target = (EventTarget & HTMLInputElement) | (EventTarget & HTMLTextAreaElement)
 

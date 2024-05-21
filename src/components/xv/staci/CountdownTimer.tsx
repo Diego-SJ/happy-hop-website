@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react'
 
 interface CountdownTimerProps {
-	targetDate?: Date
+	targetDate: Date
+	color?: string
+	decorationUrl?: string
 }
 
 const CountdownTimer: React.FC<CountdownTimerProps> = ({
-	targetDate = new Date(2024, 5, 22, 17, 45)
+	targetDate,
+	color = '#ce9f95',
+	decorationUrl = '/invites/xv/staci/decoration1.svg'
 }) => {
 	const calculateTimeLeft = () => {
 		const difference = targetDate.getTime() - new Date().getTime()
@@ -40,7 +44,7 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({
 	return (
 		<div className="py-10 flex flex-col justify-center items-center bg-white ">
 			<img
-				src="/invites/xv/staci/decoration1.svg"
+				src={decorationUrl}
 				alt="decoration"
 				className="w-[50%] mb-8 delay-[0ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
 				data-taos-offset="-10"
@@ -54,15 +58,15 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({
 				</p>
 				<div className="text-center w-full">
 					<div className="grid grid-cols-4 w-full">
-						<Square title="días" value={formatTime(timeLeft.days)} />
-						<Square title="hrs" value={formatTime(timeLeft.hours)} />
-						<Square title="min" value={formatTime(timeLeft.minutes)} />
-						<Square title="seg" value={formatTime(timeLeft.seconds)} />
+						<Square color={color} title="días" value={formatTime(timeLeft.days)} />
+						<Square color={color} title="hrs" value={formatTime(timeLeft.hours)} />
+						<Square color={color} title="min" value={formatTime(timeLeft.minutes)} />
+						<Square color={color} title="seg" value={formatTime(timeLeft.seconds)} />
 					</div>
 				</div>
 			</div>
 			<img
-				src="/invites/xv/staci/decoration1.svg"
+				src={decorationUrl}
 				alt="decoration"
 				className="w-[50%] mt-8 rotate-180 delay-[0ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
 				data-taos-offset="-100"
@@ -71,10 +75,13 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({
 	)
 }
 
-const Square = ({ title = '', value = '' }) => {
+const Square = ({ title = '', value = '', color = '#ce9f95' }) => {
 	return (
 		<div className="text-center ">
-			<h5 className="font-[Lora] date-day-number xs:text-[2.2rem] ms:text-[2.5rem]  m-0 leading-[0.7] pt-[1rem] text-[#ce9f95] ">
+			<h5
+				className="font-[Lora] date-day-number xs:text-[2.2rem] ms:text-[2.5rem]  m-0 leading-[0.7] pt-[1rem]"
+				style={{ color }}
+			>
 				{value || '00'}
 			</h5>
 			<p className="font-[Handlee] date-text text-zinc-500 xs:text-[1rem] ms:text-[1.2rem] mt-4">

@@ -5,6 +5,8 @@ import ConfirmAsistance from '../../../../components/xv/staci/ConfirmAsistance'
 import CountdownTimer from '../../../../components/xv/staci/CountdownTimer'
 import TimeLine from '../../../../components/xv/staci/TimeLine.astro'
 import Gallery from '../../../../components/xv/staci/GalleryXV.astro'
+
+const targetDate = new Date(2024, 5, 22, 17, 45)
 ---
 
 <LayoutInvite title="XV Staci Naomi">
@@ -53,9 +55,13 @@ import Gallery from '../../../../components/xv/staci/GalleryXV.astro'
 				alegrías. Será un placer compartir contigo este feliz día.
 			</p>
 		</section>
-		<CountdownTimer client:only="react" />
+		<CountdownTimer client:only="react" targetDate={targetDate} />
 		<section class="bg-[#ba999b] text-white py-[10rem] px-8 relative w-full">
-			<img src="/invites/xv/staci/waves.svg" alt="waves" class="absolute top-0 left-0 w-full" />
+			<img
+				src="/invites/xv/staci/waves.svg"
+				alt="waves"
+				class="absolute top-0 left-0 w-full h-10"
+			/>
 			<div class="flex flex-col mb-4">
 				<h4
 					class="text-center font-light xs:text-4xl ms:text-5xl mb-4 delay-[0ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
@@ -91,7 +97,7 @@ import Gallery from '../../../../components/xv/staci/GalleryXV.astro'
 			<img
 				src="/invites/xv/staci/waves.svg"
 				alt="waves"
-				class="absolute bottom-0 left-0 rotate-180 w-full"
+				class="absolute bottom-0 left-0 rotate-180 w-full h-10"
 			/>
 		</section>
 		<section class="bg-white flex justify-center items-center flex-col py-16 gap-16 w-full">
@@ -125,7 +131,11 @@ import Gallery from '../../../../components/xv/staci/GalleryXV.astro'
 		<section
 			class="bg-[#ba999b] flex justify-center items-center flex-col py-[9rem] relative w-full"
 		>
-			<img src="/invites/xv/staci/waves.svg" alt="waves" class="absolute top-0 left-0 w-full" />
+			<img
+				src="/invites/xv/staci/waves.svg"
+				alt="waves"
+				class="absolute top-0 left-0 w-full h-10"
+			/>
 			<h4
 				style="font-family:Cinzel Decorative;"
 				class="text-3xl mb-[1rem] mt-6 text-white delay-[0ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
@@ -140,7 +150,7 @@ import Gallery from '../../../../components/xv/staci/GalleryXV.astro'
 				<img
 					src="/invites/xv/staci/waves-secondary.svg"
 					alt="waves"
-					class="absolute top-0 left-0 w-full"
+					class="absolute top-0 left-0 w-full h-10"
 				/>
 				<h4
 					style="font-family:Cinzel Decorative;"
@@ -203,13 +213,17 @@ import Gallery from '../../../../components/xv/staci/GalleryXV.astro'
 		</section>
 		<section class="w-full">
 			<div class="bg-[#ba999b] py-[10rem] px-8 relative w-full">
-				<img src="/invites/xv/staci/waves.svg" alt="waves" class="absolute top-0 left-0 w-full" />
+				<img
+					src="/invites/xv/staci/waves.svg"
+					alt="waves"
+					class="absolute top-0 left-0 w-full h-10"
+				/>
 
 				<ConfirmAsistance client:only="react" />
 				<img
 					src="/invites/xv/staci/waves.svg"
 					alt="waves"
-					class="absolute bottom-0 left-0 rotate-180 w-full"
+					class="absolute bottom-0 left-0 rotate-180 w-full h-10"
 				/>
 			</div>
 		</section>
