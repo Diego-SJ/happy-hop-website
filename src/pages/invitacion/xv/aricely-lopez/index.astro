@@ -5,6 +5,7 @@ import ConfirmAsistance from '../../../../components/xv/aricely/ConfirmAsistance
 import CountdownTimer from '../../../../components/xv/staci/CountdownTimer'
 import TimeLine from '../../../../components/xv/aricely/TimeLine.astro'
 import Gallery from '../../../../components/xv/aricely/GalleryXV.astro'
+import AddToCalendarButton from '../../../../components/xv/staci/AddToCalendarButton'
 
 const targetDate = new Date(2024, 6, 10, 16, 0)
 ---
@@ -67,7 +68,7 @@ const targetDate = new Date(2024, 6, 10, 16, 0)
 			<img
 				src="/invites/xv/staci/waves.svg"
 				alt="waves"
-				class="absolute top-0 left-0 w-full h-10"
+				class="absolute top-[-2px] left-0 w-full h-10"
 			/>
 			<div class="flex flex-col mb-4">
 				<h4
@@ -104,7 +105,7 @@ const targetDate = new Date(2024, 6, 10, 16, 0)
 			<img
 				src="/invites/xv/staci/waves.svg"
 				alt="waves"
-				class="absolute bottom-0 left-0 rotate-180 w-full h-10"
+				class="absolute bottom-[-2px] left-0 rotate-180 w-full h-10"
 			/>
 		</section>
 		<section class="bg-white flex justify-center items-center flex-col py-24 gap-16 w-full">
@@ -136,15 +137,25 @@ const targetDate = new Date(2024, 6, 10, 16, 0)
 			<img
 				src="/invites/xv/staci/waves.svg"
 				alt="waves"
-				class="absolute top-0 left-0 w-full h-10"
+				class="absolute top-[-2px] left-0 w-full h-10"
 			/>
 			<h4
 				style="font-family:Cinzel Decorative;"
-				class="text-3xl mb-[1rem] mt-6 text-white delay-[0ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+				class="text-3xl mb-10 mt-6 text-white delay-[0ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
 				data-taos-offset="-50"
 			>
 				Itinerario
 			</h4>
+			<div
+				class="w-full flex justify-center items-center delay-[100ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0 mb-10"
+			>
+				<AddToCalendarButton
+					client:only="react"
+					eventName="Aricley's XV"
+					locationUrl="https://maps.app.goo.gl/WAgnFScfHdr6FdzC8"
+					date={{ startDate: '2024-07-10', startTime: '16:00', endTime: '23:59' }}
+				/>
+			</div>
 			<TimeLine />
 		</section>
 		<section class="w-full bg-white">
@@ -152,7 +163,7 @@ const targetDate = new Date(2024, 6, 10, 16, 0)
 				<img
 					src="/invites/xv/aricely/waves-secondary.svg"
 					alt="waves"
-					class="absolute top-0 left-0 w-full h-10"
+					class="absolute top-[-2px] left-0 w-full h-10"
 				/>
 				<h4
 					style="font-family:Cinzel Decorative;"
@@ -188,32 +199,32 @@ const targetDate = new Date(2024, 6, 10, 16, 0)
 				<img
 					src="/invites/xv/staci/decoration2.svg"
 					alt="decortion"
-					class="w-[60%] mx-auto mb-10 rotate-180 delay-[600ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+					class="w-[60%] mx-auto mb-10 rotate-180 delay-[0ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
 					data-taos-offset="-100"
 				/>
 				<p
 					style="font-family: 'Handlee';"
-					class="text-center text-lg mb-6 max-w-[70%] mx-auto delay-[800ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0 font-light"
+					class="text-center text-lg mb-6 max-w-[70%] mx-auto delay-[100ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0 font-light"
 					data-taos-offset="-100"
 				>
 					Comparte las fotos de mis quince años con el hashtag
 				</p>
 				<p
 					style="font-family: 'Lora';"
-					class="italic text-center text-3xl mb-6 delay-[1000ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+					class="italic text-center text-3xl mb-6 delay-[200ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
 					data-taos-offset="-100"
 				>
 					#aricely’sXV
 				</p>
 				<p
 					style="font-family: 'Handlee';"
-					class="text-center text-lg mb-6 max-w-[70%] mx-auto delay-[1200ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0 font-light"
+					class="text-center text-lg mb-6 max-w-[70%] mx-auto delay-[300ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0 font-light"
 					data-taos-offset="-100"
 				>
 					Puedes seguirme en mis redes sociales
 				</p>
 				<div
-					class="flex w-full justify-center items-center gap-10 mb-10 delay-[1400ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+					class="flex w-full justify-center items-center gap-10 mb-10 delay-[400ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
 				>
 					<a
 						href="https://www.instagram.com/yuneedmefrr/"
@@ -256,7 +267,7 @@ const targetDate = new Date(2024, 6, 10, 16, 0)
 				<img
 					src="/invites/xv/staci/decoration2.svg"
 					alt="decortion"
-					class="w-[60%] mx-auto delay-[1100ms] duration-[1600ms] taos:translate-y-[200px] taos:opacity-0"
+					class="w-[60%] mx-auto delay-[500ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
 					data-taos-offset="-100"
 				/>
 			</section>
@@ -277,14 +288,14 @@ const targetDate = new Date(2024, 6, 10, 16, 0)
 				<img
 					src="/invites/xv/staci/waves.svg"
 					alt="waves"
-					class="absolute top-0 left-0 w-full h-10"
+					class="absolute top-[-2px] left-0 w-full h-10"
 				/>
 
 				<ConfirmAsistance client:only="react" />
 				<img
 					src="/invites/xv/staci/waves.svg"
 					alt="waves"
-					class="absolute bottom-0 left-0 rotate-180 w-full h-10"
+					class="absolute bottom-[-2px] left-0 rotate-180 w-full h-10"
 				/>
 			</div>
 		</section>

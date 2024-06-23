@@ -37,7 +37,7 @@ const AddToCalendarButton: React.FC<AddToCalendarButton> = ({
 	return (
 		<button
 			onClick={saveCalendarEvent}
-			className="bg-white text-[#ce9f95] xs:py-1 xs:px-3 xs:max-w-min ms:py-2 ms:px-3 font-medium text-xs w-fit text-center hover:shadow-lg transition duration-300 ease-in-out"
+			className="bg-white text-red-950 py-3 px-4 font-medium text-base hover:-translate-y-1 w-fit text-center hover:shadow-lg transition duration-300 ease-in-out"
 			style={{ fontFamily: 'Lora' }}
 		>
 			Agregar al calendario
