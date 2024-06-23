@@ -4,12 +4,14 @@ interface CountdownTimerProps {
 	targetDate: Date
 	color?: string
 	decorationUrl?: string
+	decorationClass?: string
 }
 
 const CountdownTimer: React.FC<CountdownTimerProps> = ({
 	targetDate,
 	color = '#ce9f95',
-	decorationUrl = '/invites/xv/staci/decoration1.svg'
+	decorationUrl = '/invites/xv/staci/decoration1.svg',
+	decorationClass = ''
 }) => {
 	const calculateTimeLeft = () => {
 		const difference = targetDate.getTime() - new Date().getTime()
@@ -46,7 +48,7 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({
 			<img
 				src={decorationUrl}
 				alt="decoration"
-				className="w-[50%] mb-8 delay-[0ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+				className={`w-[50%] mb-8 delay-[0ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0 drop-shadow-lg ${decorationClass}`}
 				data-taos-offset="-10"
 			/>
 			<div className="animate-fade-up delay-100 w-full">
@@ -68,7 +70,7 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({
 			<img
 				src={decorationUrl}
 				alt="decoration"
-				className="w-[50%] mt-8 rotate-180 delay-[0ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+				className={`w-[50%] mt-8 rotate-180 delay-[0ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0 ${decorationClass}`}
 				data-taos-offset="-100"
 			/>
 		</div>
@@ -79,7 +81,7 @@ const Square = ({ title = '', value = '', color = '#ce9f95' }) => {
 	return (
 		<div className="text-center ">
 			<h5
-				className="font-[Lora] date-day-number xs:text-[2.2rem] ms:text-[2.5rem]  m-0 leading-[0.7] pt-[1rem]"
+				className="font-[Lora] date-day-number xs:text-[2.2rem] ms:text-[2.5rem]  m-0 leading-[0.7] pt-[1rem] drop-shadow-lg"
 				style={{ color }}
 			>
 				{value || '00'}

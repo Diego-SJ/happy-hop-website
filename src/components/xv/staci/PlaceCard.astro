@@ -1,19 +1,42 @@
 ---
 type Props = {
-	imageUrl: string
-	title: string
+	imageUrl?: string
+	title?: string
+	colors?: {
+		title?: string
+	}
 	subtitle: string
 	address: string
 	date: string
 	time: string
 	link: string
 	color?: string
+	class?: {
+		container?: string
+		title?: string
+		subtitle?: string
+		address?: string
+		date?: string
+		time?: string
+		link?: string
+	}
 }
-const { imageUrl, title, subtitle, address, date, time, link, color = '#ba999b' } = Astro.props
+const {
+	imageUrl,
+	title,
+	subtitle,
+	address,
+	date,
+	time,
+	link,
+	color = '#ba999b',
+	class: className,
+	colors
+} = Astro.props
 ---
 
 <div
-	class={`py-10 w-full max-w-[90%] ms:max-w-[90%] shadow-2xl rounded-lg relative shadow-[${color}] border border-[#ba999b1a] `}
+	class={`py-10 w-full max-w-[90%] ms:max-w-[90%] shadow-2xl rounded-2xl relative shadow-[${color}] border border-[#ba999b1a] ${className?.container || ''}`}
 	style={`box-shadow-color: ${color};`}
 >
 	<picture
@@ -28,34 +51,34 @@ const { imageUrl, title, subtitle, address, date, time, link, color = '#ba999b' 
 	<h2
 		class={`xs:text-3xl ms:text-5xl text-center xs:mt-[3rem] ms:mt-[5rem] xs:mb-2 ms:mb-4 delay-[0ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0`}
 		data-taos-offset="-50"
-		style={`font-family: 'MonteCarlo'; color: ${color};`}
+		style={`font-family: 'MonteCarlo'; color: ${colors?.title || color || ''};`}
 	>
 		{title}
 	</h2>
 	<div class="xs:px-8 ms:px-[4rem]">
 		<h3
-			class="text-[#5d5e5b] text-center italic mb-4 xs:text-base ms:text-xl delay-[200ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+			class="text-gray-800 text-center italic mb-4 xs:text-base ms:text-xl delay-[200ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
 			data-taos-offset="-50"
 			style="font-family: 'Lora';"
 		>
 			{subtitle}
 		</h3>
 		<p
-			class="text-[#5d5e5b] text-center italic mb-4 xs:text-sm ms:text-base delay-[400ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+			class="text-gray-500 text-center italic mb-4 xs:text-sm ms:text-base delay-[400ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
 			data-taos-offset="-50"
 			style="font-family: 'Lora';"
 		>
 			{address}
 		</p>
 		<p
-			class="text-[#6f706f] text-center text-sm ms:text-lg italic mb-0 delay-[600ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+			class="text-gray-500 text-center text-sm ms:text-base italic mb-0 delay-[600ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
 			data-taos-offset="-50"
 			style="font-family: 'Lora';"
 		>
 			{date}
 		</p>
 		<p
-			class="text-[#5d5e5b] text-center xs:text-sm ms:text-xl italic delay-[800ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+			class="text-gray-500 text-center xs:text-sm ms:text-base italic delay-[800ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
 			data-taos-offset="-50"
 			style="font-family: 'Lora';"
 		>

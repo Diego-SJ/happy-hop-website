@@ -52,7 +52,7 @@ export function downloadCSV(arrayData: DataItem[], fileName: string = 'data.csv'
 		csvContent += row + '\n'
 	})
 
-	function replacer(key: string, value: any): any {
+	function replacer(_: string, value: any): any {
 		return value === null ? '' : value // Manejar los valores nulos
 	}
 

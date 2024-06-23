@@ -1,0 +1,321 @@
+---
+import LayoutInvite from '../../../../layouts/xv/LayoutAricely.astro'
+import PlaceCard from '../../../../components/xv/staci/PlaceCard.astro'
+import ConfirmAsistance from '../../../../components/xv/aricely/ConfirmAsistance'
+import CountdownTimer from '../../../../components/xv/staci/CountdownTimer'
+import TimeLine from '../../../../components/xv/aricely/TimeLine.astro'
+import Gallery from '../../../../components/xv/aricely/GalleryXV.astro'
+
+const targetDate = new Date(2024, 6, 10, 16, 0)
+---
+
+<LayoutInvite title="XV Aricely López">
+	<main class="w-full max-w-full ms:max-w-[500px] mx-auto bg-black min-h-screen overflow-x-hidden">
+		<header class="flex justify-center items-center flex-col relative w-full">
+			<img
+				src="/invites/xv/aricely/aricely1.webp"
+				alt="Staci Naomi"
+				class="staci-hero w-full min-h-screen max-h-screen object-cover"
+				style="mask-image: linear-gradient(to bottom, rgba(0,0,0) 40%,transparent 100%);"
+			/>
+			<div
+				class="absolute bottom-[5rem] py-4 flex justify-center items-center flex-col text-center"
+			>
+				<h1
+					class="text-white xs:text-2xl ms:text-3xl pl-2 delay-[0ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+					data-taos-offset="-300"
+					style="font-family: 'Cinzel Decorative';"
+				>
+					mis xv años
+				</h1>
+				<h2
+					class="text-white xs:text-6xl ms:text-7xl mt-1 mb-8 delay-[100ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+					data-taos-offset="-300"
+					style="font-family: 'MonteCarlo';"
+				>
+					Aricely López
+				</h2>
+				<h3
+					class="text-white xs:text-1xl ms:text-3xl mb-2 pl-2 delay-[200ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+					data-taos-offset="-300"
+					style="font-family: 'Cinzel Decorative';"
+				>
+					10 de Julio
+				</h3>
+			</div>
+		</header>
+		<section
+			class="first-message bg-red-950 text-white py-6 px-8 relative w-full shadow-2xl shadow-red-950/80"
+		>
+			<p
+				class="text-center font-light py-8 italic xs:text-base ms:text-xl z-10 delay-[0ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+				data-taos-offset="-200"
+				style="font-family: 'Lora';"
+			>
+				Hoy estoy radiante y llena de vida. Quiero compartir con ustedes este día soñado y que
+				juntos celebremos hasta el amanecer. Mis Quince Años.
+			</p>
+		</section>
+		<CountdownTimer
+			client:only="react"
+			targetDate={targetDate}
+			color="#CD9C14"
+			decorationUrl="/invites/xv/aricely/decoration1.svg"
+			decorationClass="drop-shadow-xl shadow-amber-700"
+		/>
+		<section class="bg-red-950 text-white py-[10rem] px-8 relative w-full">
+			<img
+				src="/invites/xv/staci/waves.svg"
+				alt="waves"
+				class="absolute top-0 left-0 w-full h-10"
+			/>
+			<div class="flex flex-col mb-4">
+				<h4
+					class="text-center font-light xs:text-4xl ms:text-5xl mb-8 delay-[0ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+					data-taos-offset="-50"
+					style="font-family: 'MonteCarlo';"
+				>
+					Mis padres
+				</h4>
+
+				<p
+					style="font-family: 'Lora';"
+					class="italic text-center text-lg delay-[200ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+					data-taos-offset="-50"
+				>
+					Mrs. Arteaga
+					<br />
+					Mr. Lopez
+				</p>
+			</div>
+			<img
+				src="/invites/xv/staci/decoration-white.svg"
+				alt="decortion"
+				class="w-[60%] mx-auto mb-8 delay-[400ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+				data-taos-offset="-50"
+			/>
+			<p
+				style="font-family: 'Lora';"
+				class="italic text-center xs:text-xl ms:text-xl mb-3 xs:max-w-[98%] ms:max-w-[75%] mx-auto delay-[800ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+				data-taos-offset="-50"
+			>
+				Nos complace invitarte a ser parte de este gran día.
+			</p>
+			<img
+				src="/invites/xv/staci/waves.svg"
+				alt="waves"
+				class="absolute bottom-0 left-0 rotate-180 w-full h-10"
+			/>
+		</section>
+		<section class="bg-white flex justify-center items-center flex-col py-24 gap-16 w-full">
+			<h4
+				style="font-family:Cinzel Decorative;"
+				class="text-3xl mb-[4rem] delay-[0ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0 font-medium"
+				data-taos-offset="-50"
+			>
+				Ubicaciones
+			</h4>
+			<PlaceCard
+				imageUrl="/invites/xv/aricely/majesty.webp"
+				title="Evento"
+				subtitle="Majesty Event Center"
+				address="900 W Bow St. Tyler, Tx 75702"
+				date="Sábado 10 de Julio de 2024"
+				time="16:00 hrs."
+				color="#6f1f20"
+				colors={{
+					title: '#CD9C14'
+				}}
+				class={{
+					container: 'rounded-3xl'
+				}}
+				link="https://maps.app.goo.gl/WAgnFScfHdr6FdzC8"
+			/>
+		</section>
+		<section class="bg-red-950 flex justify-center items-center flex-col py-[9rem] relative w-full">
+			<img
+				src="/invites/xv/staci/waves.svg"
+				alt="waves"
+				class="absolute top-0 left-0 w-full h-10"
+			/>
+			<h4
+				style="font-family:Cinzel Decorative;"
+				class="text-3xl mb-[1rem] mt-6 text-white delay-[0ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+				data-taos-offset="-50"
+			>
+				Itinerario
+			</h4>
+			<TimeLine />
+		</section>
+		<section class="w-full bg-white">
+			<div class="pt-20 pb-16 px-8 relative w-full">
+				<img
+					src="/invites/xv/aricely/waves-secondary.svg"
+					alt="waves"
+					class="absolute top-0 left-0 w-full h-10"
+				/>
+				<h4
+					style="font-family:Cinzel Decorative;"
+					class="text-3xl mb-10 mt-6 text-center delay-[0ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0 font-medium"
+					data-taos-offset="-30"
+				>
+					Dresscode
+				</h4>
+				<p
+					style="font-family: 'Lora';"
+					class="italic text-center text-[#CD9C14] text-2xl delay-[200ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0 mb-4"
+					data-taos-offset="-30"
+				>
+					Formal
+				</p>
+				<p
+					style="font-family: 'Lora';"
+					class="italic text-center text-black/60 text-xl delay-[200ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+					data-taos-offset="-30"
+				>
+					No llevar prendas de color rojo
+				</p>
+				<div
+					class="flex justify-center my-6 ms:my-10 mb-20 delay-[400ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+					data-taos-offset="-30"
+				>
+					<img src="/invites/xv/aricely/woman.svg" alt="decortion" class="w-20 ms:w-28" />
+					<img src="/invites/xv/aricely/man.svg" alt="waves" class="w-20 ms:w-28" />
+				</div>
+			</div>
+
+			<section class="bg-red-950 text-white py-6 px-8 relative w-full shadow-2xl shadow-red-950/80">
+				<img
+					src="/invites/xv/staci/decoration2.svg"
+					alt="decortion"
+					class="w-[60%] mx-auto mb-10 rotate-180 delay-[600ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+					data-taos-offset="-100"
+				/>
+				<p
+					style="font-family: 'Handlee';"
+					class="text-center text-lg mb-6 max-w-[70%] mx-auto delay-[800ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0 font-light"
+					data-taos-offset="-100"
+				>
+					Comparte las fotos de mis quince años con el hashtag
+				</p>
+				<p
+					style="font-family: 'Lora';"
+					class="italic text-center text-3xl mb-6 delay-[1000ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+					data-taos-offset="-100"
+				>
+					#aricely’sXV
+				</p>
+				<p
+					style="font-family: 'Handlee';"
+					class="text-center text-lg mb-6 max-w-[70%] mx-auto delay-[1200ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0 font-light"
+					data-taos-offset="-100"
+				>
+					Puedes seguirme en mis redes sociales
+				</p>
+				<div
+					class="flex w-full justify-center items-center gap-10 mb-10 delay-[1400ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+				>
+					<a
+						href="https://www.instagram.com/yuneedmefrr/"
+						target="_blank"
+						rel="noopener"
+						class="w-8 h-8 flex justify-center items-center rounded-full"
+					>
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="instagram"
+							><path
+								fill="#fff"
+								d="m16 12v-.001c0-2.209-1.791-4-4-4s-4 1.791-4 4 1.791 4 4 4c1.104 0 2.104-.448 2.828-1.171.723-.701 1.172-1.682 1.172-2.768 0-.021 0-.042-.001-.063v.003zm2.16 0c-.012 3.379-2.754 6.114-6.135 6.114-3.388 0-6.135-2.747-6.135-6.135s2.747-6.135 6.135-6.135c1.694 0 3.228.687 4.338 1.797 1.109 1.08 1.798 2.587 1.798 4.256 0 .036 0 .073-.001.109v-.005zm1.687-6.406v.002c0 .795-.645 1.44-1.44 1.44s-1.44-.645-1.44-1.44.645-1.44 1.44-1.44c.398 0 .758.161 1.018.422.256.251.415.601.415.988v.029-.001zm-7.84-3.44-1.195-.008q-1.086-.008-1.649 0t-1.508.047c-.585.02-1.14.078-1.683.17l.073-.01c-.425.07-.802.17-1.163.303l.043-.014c-1.044.425-1.857 1.237-2.272 2.254l-.01.027c-.119.318-.219.695-.284 1.083l-.005.037c-.082.469-.14 1.024-.159 1.589l-.001.021q-.039.946-.047 1.508t0 1.649.008 1.195-.008 1.195 0 1.649.047 1.508c.02.585.078 1.14.17 1.683l-.01-.073c.07.425.17.802.303 1.163l-.014-.043c.425 1.044 1.237 1.857 2.254 2.272l.027.01c.318.119.695.219 1.083.284l.037.005c.469.082 1.024.14 1.588.159l.021.001q.946.039 1.508.047t1.649 0l1.188-.024 1.195.008q1.086.008 1.649 0t1.508-.047c.585-.02 1.14-.078 1.683-.17l-.073.01c.425-.07.802-.17 1.163-.303l-.043.014c1.044-.425 1.857-1.237 2.272-2.254l.01-.027c.119-.318.219-.695.284-1.083l.005-.037c.082-.469.14-1.024.159-1.588l.001-.021q.039-.946.047-1.508t0-1.649-.008-1.195.008-1.195 0-1.649-.047-1.508c-.02-.585-.078-1.14-.17-1.683l.01.073c-.07-.425-.17-.802-.303-1.163l.014.043c-.425-1.044-1.237-1.857-2.254-2.272l-.027-.01c-.318-.119-.695-.219-1.083-.284l-.037-.005c-.469-.082-1.024-.14-1.588-.159l-.021-.001q-.946-.039-1.508-.047t-1.649 0zm11.993 9.846q0 3.578-.08 4.953c.005.101.009.219.009.337 0 3.667-2.973 6.64-6.64 6.64-.119 0-.237-.003-.354-.009l.016.001q-1.375.08-4.953.08t-4.953-.08c-.101.005-.219.009-.337.009-3.667 0-6.64-2.973-6.64-6.64 0-.119.003-.237.009-.354l-.001.016q-.08-1.375-.08-4.953t.08-4.953c-.005-.101-.009-.219-.009-.337 0-3.667 2.973-6.64 6.64-6.64.119 0 .237.003.354.009l-.016-.001q1.375-.08 4.953-.08t4.953.08c.101-.005.219-.009.337-.009 3.667 0 6.64 2.973 6.64 6.64 0 .119-.003.237-.009.354l.001-.016q.08 1.374.08 4.953z"
+							></path></svg
+						>
+					</a>
+					<a
+						href="https://www.tiktok.com/@aricelyistrash1"
+						target="_blank"
+						rel="noopener"
+						class="w-8 h-8 flex justify-center items-center rounded-full"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="512"
+							height="512"
+							fill-rule="evenodd"
+							clip-rule="evenodd"
+							image-rendering="optimizeQuality"
+							shape-rendering="geometricPrecision"
+							text-rendering="geometricPrecision"
+							viewBox="0 0 512 512"
+							id="tiktok"
+							><path
+								fill="#fff"
+								stroke-width="1"
+								d="M353.97 0.43c0.03,7.81 2.31,120.68 120.76,127.72 0,32.55 0.04,56.15 0.04,87.21 -8.97,0.52 -77.98,-4.49 -120.93,-42.8l-0.13 169.78c1.63,117.84 -85.09,189.55 -198.44,164.78 -195.46,-58.47 -130.51,-348.37 65.75,-317.34 0,93.59 0.05,-0.03 0.05,93.59 -81.08,-11.93 -108.2,55.52 -86.65,103.81 19.6,43.97 100.33,53.5 128.49,-8.53 3.19,-12.14 4.78,-25.98 4.78,-41.52l0 -337.13 86.28 0.43z"
+							></path></svg
+						>
+					</a>
+				</div>
+				<img
+					src="/invites/xv/staci/decoration2.svg"
+					alt="decortion"
+					class="w-[60%] mx-auto delay-[1100ms] duration-[1600ms] taos:translate-y-[200px] taos:opacity-0"
+					data-taos-offset="-100"
+				/>
+			</section>
+
+			<div class="bg-white py-10 px-8 relative">
+				<h4
+					style="font-family:Cinzel Decorative;"
+					class="text-3xl mb-[2rem] mt-6 text-center delay-[0ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+					data-taos-offset="-100"
+				>
+					Galería
+				</h4>
+				<Gallery />
+			</div>
+		</section>
+		<section class="w-full">
+			<div class="bg-red-950 py-[10rem] px-8 relative w-full">
+				<img
+					src="/invites/xv/staci/waves.svg"
+					alt="waves"
+					class="absolute top-0 left-0 w-full h-10"
+				/>
+
+				<ConfirmAsistance client:only="react" />
+				<img
+					src="/invites/xv/staci/waves.svg"
+					alt="waves"
+					class="absolute bottom-0 left-0 rotate-180 w-full h-10"
+				/>
+			</div>
+		</section>
+		<footer class="w-full">
+			<div class="bg-white py-4 text-center w-full">
+				<p style="font-family: 'Lora';" class="italic text-lg">Con ❤ Aricely López</p>
+			</div>
+		</footer>
+	</main>
+
+	<style is:global>
+		@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Dancing+Script:wght@400..700&family=Lora:ital,wght@0,400..700;1,400..700&family=MonteCarlo&display=swap');
+
+		.staci-hero {
+			position: relative;
+			display: inline-block;
+		}
+
+		.first-message {
+			z-index: 1;
+		}
+
+		.first-message::before {
+			content: '"';
+			font-family: 'MonteCarlo', Courier, monospace;
+			position: absolute;
+			top: -20rem;
+			left: -5rem;
+			font-size: 35rem;
+			z-index: -1;
+			color: rgba(255, 255, 255, 0.217);
+		}
+	</style>
+</LayoutInvite>

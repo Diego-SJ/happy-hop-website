@@ -1,0 +1,187 @@
+---
+interface Props {
+	title: string
+	ogDescription?: string
+	ogImage?: string
+	ogUrl?: string
+}
+
+const { title, ogDescription, ogUrl } = Astro.props
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={ogDescription || '¡Unete a mi fiesta de cumpleaños!'} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<meta property="og:title" content={title} />
+		<meta
+			property="og:description"
+			content={ogDescription || 'Mis XV años Staci Naomi, ¡Unete a mi fiesta de cumpleaños!'}
+		/>
+		<meta
+			property="og:image"
+			content="https://firebasestorage.googleapis.com/v0/b/test1-d2593.appspot.com/o/assets%2Fwebp%2Fstaci-naomi.webp?alt=media&token=df4909a2-768c-41fc-97d8-db81ac423fe3"
+		/>
+		<meta property="og:url" content={ogUrl || 'https://happy-hop.com'} />
+		<meta
+			name="viewport"
+			content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi"
+		/>
+		<link
+			href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"
+			rel="stylesheet"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Dancing+Script:wght@400..700&family=Lora:ital,wght@0,400..700;1,400..700&family=MonteCarlo&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<slot />
+
+		<button
+			id="audio-btn"
+			class="fixed w-10 h-10 bg-[#ba999b]/50 top-[4rem] right-0 p-1 z-50 shadow-xl border border-black/10"
+		>
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="Play"
+				><path
+					d="M12 39c-.549 0-1.095-.15-1.578-.447A3.008 3.008 0 0 1 9 36V12c0-1.041.54-2.007 1.422-2.553a3.014 3.014 0 0 1 2.919-.132l24 12a3.003 3.003 0 0 1 0 5.37l-24 12c-.42.21-.885.315-1.341.315z"
+					fill="#ffffff"
+					class="color000000 svgShape"></path></svg
+			>
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				fill="none"
+				viewBox="0 0 24 24"
+				id="Pause"
+				class="hidden"
+				><path
+					fill="#ffffff"
+					d="M8 5a2 2 0 0 0-2 2v10a2 2 0 1 0 4 0V7a2 2 0 0 0-2-2zm8 0a2 2 0 0 0-2 2v10a2 2 0 1 0 4 0V7a2 2 0 0 0-2-2z"
+					class="color000000 svgShape"></path></svg
+			>
+		</button>
+
+		<audio id="my_audio" autoplay loop>
+			<source src="/audio/faded.mp3" type="audio/mpeg" />
+		</audio>
+
+		<script>
+			let playIcon = document.querySelector('#Play') as SVGElement
+			let pauseIcon = document.querySelector('#Pause') as SVGElement
+			let audioBtn = document.querySelector('#audio-btn') as HTMLButtonElement
+
+			window.onload = function () {
+				audioBtn.click()
+			}
+
+			audioBtn.addEventListener('click', function () {
+				const audioElement = document.getElementById('my_audio') as HTMLAudioElement
+				if (audioElement) {
+					let isPlaying = window.localStorage.getItem('audio_playing')
+					if (isPlaying === 'true') {
+						audioElement.pause()
+						window.localStorage.setItem('audio_playing', 'false')
+						if (playIcon) {
+							playIcon.setAttribute('style', 'display: block')
+						}
+
+						if (pauseIcon) {
+							pauseIcon.setAttribute('style', 'display: none')
+						}
+					} else {
+						audioElement.play()
+						window.localStorage.setItem('audio_playing', 'true')
+						if (playIcon) {
+							playIcon.setAttribute('style', 'display: none')
+						}
+
+						if (pauseIcon) {
+							pauseIcon.setAttribute('style', 'display: block')
+						}
+					}
+				}
+			})
+		</script>
+		<script src="https://unpkg.com/taos@1.0.5/dist/taos.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+		<script>
+			document.documentElement.classList.add('js')
+		</script>
+	</body>
+</html>
+<style is:global>
+	:root {
+		--accent: 136, 58, 234;
+		--accent-light: 224, 204, 250;
+		--accent-dark: 49, 10, 101;
+		--accent-gradient: linear-gradient(
+			45deg,
+			rgb(var(--accent)),
+			rgb(var(--accent-light)) 30%,
+			white 60%
+		);
+	}
+	html {
+		font-family: system-ui, sans-serif;
+		background: #e8ddde;
+		background-size: 224px;
+	}
+	code {
+		font-family:
+			Menlo,
+			Monaco,
+			Lucida Console,
+			Liberation Mono,
+			DejaVu Sans Mono,
+			Bitstream Vera Sans Mono,
+			Courier New,
+			monospace;
+	}
+
+	body {
+		position: relative;
+	}
+
+	.background-invite {
+		width: 100dvw; /* Corregido */
+		height: 100vh;
+		z-index: -2;
+		position: fixed;
+		top: 0;
+		left: 0;
+		object-fit: cover;
+		filter: blur(1rem);
+		transform: scale(1.2);
+	}
+
+	/* Chrome, Safari, Edge, Opera */
+	input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+
+	/* Firefox */
+	input[type='number'] {
+		-moz-appearance: textfield;
+	}
+
+	/* Hide scrollbar for Chrome, Safari and Opera */
+	*::-webkit-scrollbar {
+		display: none;
+	}
+
+	/* Hide scrollbar for IE, Edge and Firefox */
+	* {
+		-ms-overflow-style: none; /* IE and Edge */
+		scrollbar-width: none; /* Firefox */
+	}
+</style>

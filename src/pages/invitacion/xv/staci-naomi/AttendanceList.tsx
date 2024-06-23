@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import useConfirmAttendance from '../../../../hooks/useConfirmAttendance'
 import { downloadCSV, type DataItem } from '../../../../utils/functions'
 import DeleteIcon from '../../../../assets/jsx/delete'
@@ -20,8 +20,8 @@ const AttendanceList = () => {
 	useEffect(() => {
 		if (currentInvite?.guests?.length) {
 			const total = currentInvite?.guests?.reduce((acc, guest) => {
-				if (!!guest?.attendance) {
-					return acc + 1 + (guest?.guests || 0)
+				if (!!guest?.attendance && !!guest?.name) {
+					return acc + (guest?.guests || 0)
 				}
 				return acc
 			}, 0)

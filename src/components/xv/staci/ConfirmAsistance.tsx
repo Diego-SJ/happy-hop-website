@@ -2,8 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import useConfirmAttendance from '../../../hooks/useConfirmAttendance'
 
 const ConfirmAsistance = () => {
-	const { loading, fetchInvite, sendAttendance, voteSent, currentInvite } =
-		useConfirmAttendance('staci_naomi')
+	const { loading, fetchInvite, sendAttendance, voteSent } = useConfirmAttendance('staci_naomi')
 	const firstRender = useRef(false)
 	const titleRef = useRef<any>(null)
 	const [formData, setFormData] = useState<{
