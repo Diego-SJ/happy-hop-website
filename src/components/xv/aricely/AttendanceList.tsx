@@ -57,7 +57,7 @@ const AttendanceList = () => {
 	}
 
 	return (
-		<section className="flex flex-col">
+		<section className="flex flex-col w-full">
 			{(currentInvite?.guests?.length || 1) > 1 ? (
 				<>
 					<h5 className="font-[Lora] text-lg text-center mb-6">
