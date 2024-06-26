@@ -46,10 +46,48 @@ const { title, ogDescription, ogUrl } = Astro.props
 	<body>
 		<img src="/invites/xv/aricely/aricely1.webp" alt="Aricely XV años" class="background-invite" />
 		<slot />
+		<div
+			id="backdrop-bg"
+			class="fixed w-screen h-screen top-0 left-0 bg-white/10 blur-md backdrop-blur-lg z-40"
+		>
+		</div>
+		<div
+			id="backdrop-info"
+			class="w-[350px] flex flex-col fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50 items-center pb-20"
+		>
+			<h1
+				class="text-white xs:text-2xl ms:text-3xl pl-2 delay-[0ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+				data-taos-offset="-300"
+				style="font-family: 'Cinzel Decorative';"
+			>
+				mis xv años
+			</h1>
+			<h2
+				class="text-white xs:text-6xl ms:text-7xl mt-1 mb-8 delay-[100ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+				data-taos-offset="-300"
+				style="font-family: 'MonteCarlo';"
+			>
+				Aricely López
+			</h2>
+			<h3
+				class="text-white xs:text-1xl ms:text-3xl pl-2 delay-[200ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0 mb-10"
+				data-taos-offset="-300"
+				style="font-family: 'Cinzel Decorative';"
+			>
+				20 de Julio
+			</h3>
+			<button
+				id="invite-btn"
+				class="bg-white/20 border border-white rounded-sm py-3 px-6 text-white delay-[300ms] duration-[1000ms] taos:translate-y-[200px] taos:opacity-0"
+				style="font-family: 'Cinzel Decorative';"
+			>
+				Ver invitación
+			</button>
+		</div>
 
 		<button
 			id="audio-btn"
-			class="fixed w-10 h-10 bg-red-950/50 top-[4rem] right-0 p-1 z-50 shadow-2xl border border-black/90"
+			class="fixed w-10 h-10 bg-red-950/50 top-[4rem] right-0 p-1 z-50 shadow-2xl border border-black/90 hidden"
 		>
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="Play"
 				><path
@@ -70,7 +108,7 @@ const { title, ogDescription, ogUrl } = Astro.props
 			>
 		</button>
 
-		<audio id="my_audio" loop autoplay>
+		<audio id="my_audio" loop>
 			<source src="/audio/atousandyears.mp3" type="audio/mpeg" />
 		</audio>
 
@@ -78,13 +116,18 @@ const { title, ogDescription, ogUrl } = Astro.props
 			let playIcon = document.querySelector('#Play') as SVGElement
 			let pauseIcon = document.querySelector('#Pause') as SVGElement
 			let audioBtn = document.querySelector('#audio-btn') as HTMLButtonElement
+			let inviteBtn = document.querySelector('#invite-btn') as HTMLButtonElement
+			const audioElement = document.getElementById('my_audio') as HTMLAudioElement
 
-			window.onload = function () {
-				audioBtn.click()
-			}
+			inviteBtn.addEventListener('click', function () {
+				audioElement.play()
+				const backdropBg = document.getElementById('backdrop-bg')
+				const backdropInfo = document.getElementById('backdrop-info')
+				if (backdropBg) backdropBg.classList.add('animate-fadeIn')
+				if (backdropInfo) backdropInfo.classList.add('animate-fadeIn')
+			})
 
 			audioBtn.addEventListener('click', function () {
-				const audioElement = document.getElementById('my_audio') as HTMLAudioElement
 				if (audioElement) {
 					let isPlaying = window.localStorage.getItem('audio_playing')
 					if (isPlaying === 'true') {
@@ -191,5 +234,22 @@ const { title, ogDescription, ogUrl } = Astro.props
 
 	.bg-primary {
 		background-color: hsl(var(--accent)) !important;
+	}
+
+	@keyframes fadeBackdrop {
+		0% {
+			opacity: 1;
+		}
+		80% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 0;
+			visibility: hidden;
+		}
+	}
+
+	.animate-fadeIn {
+		animation: fadeBackdrop 1s forwards;
 	}
 </style>
