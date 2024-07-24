@@ -1,4 +1,6 @@
 ---
+import Navbar from '../../components/landing/Navbar'
+import Footer from '../../components/landing/Footer.astro'
 interface Props {
 	title: string
 	ogDescription?: string
@@ -6,14 +8,17 @@ interface Props {
 	ogUrl?: string
 }
 
-const { title, ogDescription, ogUrl } = Astro.props
+const { title, ogDescription, ogImage, ogUrl } = Astro.props
 ---
 
 <!doctype html>
 <html lang="en" class="scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content={ogDescription || '¡Unete a mi fiesta de cumpleaños!'} />
+		<meta
+			name="description"
+			content={ogDescription || 'Saltos, risas y momentos inolvidables te esperan'}
+		/>
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
@@ -21,22 +26,29 @@ const { title, ogDescription, ogUrl } = Astro.props
 		<meta property="og:title" content={title} />
 		<meta
 			property="og:description"
-			content={ogDescription || '¡Unete a mi fiesta de cumpleaños!'}
+			content={ogDescription || 'Saltos, risas y momentos inolvidables te esperan'}
 		/>
 		<meta
 			property="og:image"
-			content="https://firebasestorage.googleapis.com/v0/b/general-testing-70f4c.appspot.com/o/happy-hop%2Fscoob-alexys.webp?alt=media&token=1af5552e-e56d-4614-99ec-84a8d4fc8fae"
+			content={ogImage ||
+				'https://firebasestorage.googleapis.com/v0/b/general-testing-70f4c.appspot.com/o/happy-hop%2Fhh-home.webp?alt=media&token=65b86b85-3d7d-4790-940b-b9396a921ffa'}
 		/>
 		<meta property="og:url" content={ogUrl || 'https://happy-hop.com'} />
 		<meta
 			name="viewport"
-			content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi"
+			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
 		/>
-		<link href="https://fonts.cdnfonts.com/css/scooby-doo-2" rel="stylesheet" />
+		<script>
+			document.documentElement.classList.add('js')
+		</script>
 	</head>
 	<body>
+		<Navbar client:only="react" />
 		<slot />
-		<img class="background-invite" src="/invites/scoob/scoob.webp" alt="scooby" />
+		<Footer />
+
+		<!-- animate on scroll script -->
+		<script src="https://unpkg.com/taos@1.0.5/dist/taos.js"></script>
 	</body>
 </html>
 <style is:global>
@@ -51,17 +63,6 @@ const { title, ogDescription, ogUrl } = Astro.props
 			white 60%
 		);
 	}
-
-	@import url('https://fonts.cdnfonts.com/css/scooby-doo-2');
-
-	@font-face {
-		font-family: 'ScoobEpic';
-		src: url('/fonts/ScoobEpic.ttf') format('truetype');
-		font-weight: normal;
-		font-style: normal;
-		font-display: swap;
-	}
-
 	html {
 		font-family: system-ui, sans-serif;
 		background: #ffffff;
@@ -79,24 +80,14 @@ const { title, ogDescription, ogUrl } = Astro.props
 			monospace;
 	}
 
-	body {
-		position: relative;
-	}
-
-	.background-invite {
-		width: 100dvw; /* Corregido */
-		height: 100vh;
-		z-index: -2;
-		position: fixed;
-		top: 0;
-		left: 0;
-		object-fit: cover;
-		filter: blur(1rem);
-		transform: scale(1.2);
-	}
-
-	.scoob-font {
-		font-family: 'Scooby Doo', sans-serif !important;
+	main {
+		margin: 100px auto auto;
+		padding: 1rem;
+		width: 1200px;
+		max-width: calc(100% - 2rem);
+		font-size: 20px;
+		line-height: 1.6;
+		overflow: visible;
 	}
 
 	/* Chrome, Safari, Edge, Opera */

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
-import useConfirmAttendance from '../../../../hooks/useConfirmAttendance'
-import { downloadCSV, type DataItem } from '../../../../utils/functions'
-import DeleteIcon from '../../../../assets/jsx/delete'
+import useConfirmAttendance from '../../../hooks/useConfirmAttendance'
+import { downloadCSV, type DataItem } from '../../../utils/functions'
+import DeleteIcon from '../../../assets/jsx/delete'
 
 const AttendanceList = () => {
 	const { fetchInvite, currentInvite, deleteByName, loading } = useConfirmAttendance('staci_naomi')

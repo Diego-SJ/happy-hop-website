@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { SOCIAL_MEDIA } from '../constants/urls'
+import { SOCIAL_MEDIA } from '../../constants/urls'
 
 const NavItem = ({ title = '', href = '#' }) => {
 	return (
