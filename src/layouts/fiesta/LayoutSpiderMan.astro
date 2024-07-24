@@ -12,12 +12,19 @@ const { title, ogDescription, ogUrl } = Astro.props
 <!doctype html>
 <html lang="en" class="scroll-smooth">
 	<head>
-		<meta charset="UTF-8" />
+		<title>{title}</title>
 		<meta name="description" content={ogDescription || '¡Unete a mi fiesta de cumpleaños!'} />
+		<meta name="generator" content={Astro.generator} />
+
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi"
+		/>
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+
+		<!-- open grpah -->
 		<meta property="og:title" content={title} />
 		<meta
 			property="og:description"
@@ -28,10 +35,11 @@ const { title, ogDescription, ogUrl } = Astro.props
 			content="https://firebasestorage.googleapis.com/v0/b/test1-d2593.appspot.com/o/assets%2Fwebp%2Fjosephog.webp?alt=media&token=78fb98a2-d15e-457e-91a3-ba19cde9c060"
 		/>
 		<meta property="og:url" content={ogUrl || 'https://happy-hop.com'} />
-		<meta
-			name="viewport"
-			content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi"
-		/>
+
+		<!-- fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet" />
 	</head>
 	<body>
 		<slot />
@@ -58,7 +66,7 @@ const { title, ogDescription, ogUrl } = Astro.props
 	}
 
 	html {
-		font-family: system-ui, sans-serif;
+		font-family: 'Bangers', system-ui, sans-serif;
 		background: #ffffff;
 		background-size: 224px;
 	}
